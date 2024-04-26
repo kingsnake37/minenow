@@ -20,15 +20,14 @@ body {
   float: left;
   display: block;
   color: #f2f2f2;
-  text-align: center;
-  padding: 14px 56px;
+  padding: 24px 36px;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 35px;
 }
 
 .topnav a:hover {
-  background: linear-gradient(to bottom, #006eff 0%, #2f00ff 100%);
-  color: rgb(255, 255, 255);
+  color: #2600ff;
+  background-color: #0f0f0f;
 }
 
 .topnav a.active {
@@ -38,6 +37,21 @@ body {
 
 .topnav .icon {
   display: none;
+}
+
+.logoimg {
+  display: block;
+  width: 323px;
+  padding-bottom: -4px;
+  margin-top: 0%;
+  position: relative;
+  margin-left: 1%;
+  text-align: center;
+  float: left;
+}
+
+.logoimg:hover {
+  opacity: 0.7;
 }
 
 .responsiveimg {
@@ -178,6 +192,13 @@ h2 {
   margin-top: 10%;
 }
 
+.logoimg {
+  display: block;
+  width: 62%;
+  margin-top: 3%;
+  position: relative;
+  margin-left: 2%;
+}
 }
 
 </style>
@@ -185,6 +206,7 @@ h2 {
 <body>
 
 <div class="topnav" id="myTopnav">
+  <img src="Images/Logo.png" class="logoimg" onclick="window.open('leagues')" style="cursor: pointer;">
   <a href="index">Home</a>
   <a href="games" class="active">Games</a>
   <a href="leagues">Leagues</a>
@@ -197,7 +219,7 @@ h2 {
 </div>
 
 <h1 class="sponsoredsidetext">Sponsored</h1>
-<a href=""><img src="Images/WocSponsor.png" class="responsiveimg"></a>
+<img src="Images/WocSponsor.png" class="responsiveimg" onclick="window.open('https://discord.gg/Xp3RzdUdS8', '_blank')" style="cursor: pointer;">
 
 <div class="bestratedgamescontainer">
 <h1 class="sidetext">Best Rated Games</h1>
@@ -211,7 +233,7 @@ h2 {
 
 </div>
 </div>
-<h1 class="sidetext">New & Upcomming Games</h1>
+<h1 class="sidetext">New & Upcoming Games</h1>
 <h1 class="newsidetext">DM ME ON DISCORD TO GET YOUR GAME LISTED HERE FOR FREE!</h1>
 <div class="scroll-container" scrolling="yes">
   <a href="https://discord.gg/Gb3pjn2rsE"><img src="Images/GamesDirectMessage.png"></a>
@@ -226,8 +248,10 @@ function myFunction() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
     x.className += " responsive";
+    document.querySelector(".logoimg").style.display = "none";
   } else {
     x.className = "topnav";
+    document.querySelector(".logoimg").style.display = "block";
   }
 }
 

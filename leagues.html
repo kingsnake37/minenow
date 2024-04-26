@@ -29,15 +29,14 @@ body {
   float: left;
   display: block;
   color: #f2f2f2;
-  text-align: center;
-  padding: 14px 56px;
+  padding: 24px 36px;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 35px;
 }
 
 .topnav a:hover {
-  background: linear-gradient(to bottom, #006eff 0%, #2f00ff 100%);
-  color: rgb(255, 255, 255);
+  color: #2600ff;
+  background-color: #0f0f0f;
 }
 
 .topnav a.active {
@@ -47,6 +46,21 @@ body {
 
 .topnav .icon {
   display: none;
+}
+
+.logoimg {
+  display: block;
+  width: 323px;
+  padding-bottom: -4px;
+  margin-top: 0%;
+  position: relative;
+  margin-left: 1%;
+  text-align: center;
+  float: left;
+}
+
+.logoimg:hover {
+  opacity: 0.7;
 }
 
 .responsiveimg {
@@ -251,7 +265,7 @@ h2 {
     margin-top: 20px;
   }
   .choicescontainer {
-    margin-top: -70px;
+    margin-top: -110px;
   }
   .scroll-container img {
     width: 80%;
@@ -262,7 +276,7 @@ h2 {
     margin-left: 12px;
   }
   .leaguescontainer {
-    margin-top: -80px;
+    margin-top: -70px;
   }
   
   .sponsoravailable img {
@@ -270,6 +284,23 @@ h2 {
     margin-left: -0.5%;
     margin-top: -290px;
     margin-bottom: -30px;
+}
+
+.logoimg {
+  display: block;
+  width: 62%;
+  margin-top: 3%;
+  position: relative;
+  margin-left: 2%;
+}
+
+.columnleagueimg img {
+    width: 48%;
+    margin: 3px 1%;
+}
+
+.row {
+  margin-top: -40px;
 }
 }
 
@@ -280,6 +311,7 @@ h2 {
 <body>
 
 <div class="topnav" id="myTopnav">
+  <img src="Images/Logo.png" class="logoimg" onclick="window.open('leagues')" style="cursor: pointer;">
   <a href="index">Home</a>
   <a href="games">Games</a>
   <a href="leagues" class="active">Leagues</a>
@@ -340,18 +372,10 @@ h2 {
   <h1 class="sidetext">Custom Made Leagues</h1>
   <div class="columnleagueimg">
     <img src="Images/LeaguesIMG/ImpulseXCustom.png" onclick="window.open('https://discord.gg/8GWnhUpaMS', '_blank')" style="cursor: pointer;">
+    <img src="Images/LeaguesIMG/InternationalMotorRacingProjectCustom.png" onclick="window.open('https://discord.gg/PRYnzs7EXh', '_blank')" style="cursor: pointer;">
     <img src="Images/LeaguesIMG/RobloxSuperRacingLeagueCustom.png" onclick="window.open('https://discord.gg/7t5es9M3AA', '_blank')" style="cursor: pointer;">
     <img src="Images/LeaguesIMG/Formula1ExtremeCustom.png" onclick="window.open('https://discord.gg/reT4N2JgmG', '_blank')" style="cursor: pointer;">
   </div>
-</div>
-
-<div class="row" id="IFRLeagues">
-    <h1 class="sidetext">ION Formula Based Leagues</h1>
-    <div class="columnleagueimg">
-      <img src="Images/LeaguesIMG/LeagueSpotsAvailable.png" onclick="window.open('https://discord.gg/sRn3yh2CFP', '_blank')" style="cursor: pointer;">
-      <img src="Images/LeaguesIMG/LeagueSpotsAvailable.png" onclick="window.open('https://discord.gg/sRn3yh2CFP', '_blank')" style="cursor: pointer;">
-      <img src="Images/LeaguesIMG/LeagueSpotsAvailable.png" onclick="window.open('https://discord.gg/sRn3yh2CFP', '_blank')" style="cursor: pointer;">
-    </div>
 </div>
 
 <div class="row" id="PTDLeagues">
@@ -359,8 +383,15 @@ h2 {
     <div class="columnleagueimg">
         <img src="Images/LeaguesIMG/GlobalRacingChampionshipPTD.png" onclick="window.open('https://discord.gg/Pxa2KbYHHv', '_blank')" style="cursor: pointer;">
         <img src="Images/LeaguesIMG/LeagueSpotsAvailable.png" onclick="window.open('https://discord.gg/sRn3yh2CFP', '_blank')" style="cursor: pointer;">
-        <img src="Images/LeaguesIMG/LeagueSpotsAvailable.png" onclick="window.open('https://discord.gg/sRn3yh2CFP', '_blank')" style="cursor: pointer;">
-      </div>
+       </div>
+</div>
+
+
+<div class="row" id="IFRLeagues">
+  <h1 class="sidetext">ION Formula Based Leagues</h1>
+  <div class="columnleagueimg">
+    <img src="Images/LeaguesIMG/LeagueSpotsAvailable.png" onclick="window.open('https://discord.gg/sRn3yh2CFP', '_blank')" style="cursor: pointer;">
+  </div>
 </div>
 </div>
 
@@ -374,8 +405,10 @@ function myFunction() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
     x.className += " responsive";
+    document.querySelector(".logoimg").style.display = "none";
   } else {
     x.className = "topnav";
+    document.querySelector(".logoimg").style.display = "block";
   }
 }
 

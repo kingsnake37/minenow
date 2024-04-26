@@ -23,15 +23,14 @@ body {
   float: left;
   display: block;
   color: #f2f2f2;
-  text-align: center;
-  padding: 14px 56px;
+  padding: 24px 36px;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 35px;
 }
 
 .topnav a:hover {
-  background: linear-gradient(to bottom, #006eff 0%, #2f00ff 100%);
-  color: rgb(255, 255, 255);
+  color: #2600ff;
+  background-color: #0f0f0f;
 }
 
 .topnav a.active {
@@ -43,6 +42,21 @@ body {
   display: none;
 }
 
+.logoimg {
+  display: block;
+  width: 323px;
+  padding-bottom: -4px;
+  margin-top: 0%;
+  position: relative;
+  margin-left: 1%;
+  text-align: center;
+  float: left;
+}
+
+.logoimg:hover {
+  opacity: 0.7;
+}
+
 .slideshowimagestyle {
   width: 100%;
 }
@@ -51,7 +65,7 @@ body {
   width: 90%;
   position: relative;
   margin-top: 2%;
-  margin-left: 5.5%;
+  margin-left: 4.8%;
 }
 
 .slideshowimagestyle:hover {
@@ -179,12 +193,21 @@ body {
   background: #7700b3; 
 }
 
+.roracingvideotrailer {
+  width: 75%;
+  height: 25%;
+  margin-left: 12%;
+}
+
 @media screen and (max-width: 1400px) {
+  
   .topnav a:not(:first-child) {display: none;}
   .topnav a.icon {
     float: right;
     display: block;
+    font-size: 8vw;
   }
+
   
   .topnav.responsive {position: relative;}
   .topnav.responsive .icon {
@@ -197,9 +220,18 @@ body {
     display: block;
     text-align: left;
   }
+
   .sidetext {
-    font-size: 25px;
+    font-size: 17px;
   }
+
+  .slideshow-container {
+  width: 90%;
+  position: relative;
+  margin-top: 2%;
+  margin-left: 4.5%;
+}
+
   .dot {
   cursor: pointer;
   height: 10px;
@@ -219,14 +251,29 @@ body {
  .active, .dot:hover {
   background-color: #000000;
 }
+
+.logoimg {
+  display: block;
+  width: 62%;
+  margin-top: 3%;
+  position: relative;
+  margin-left: 2%;
+}
+
+.roracingvideotrailer {
+  width: 90%;
+  height: 25%;
+  margin-left: 5%;
+}
+
 }
 
 </style>
 </head>
 <body>
-
 <div class="topnav" id="myTopnav">
-  <a href="index" class="active">Home</a>
+  <img src="Images/Logo.png" class="logoimg" onclick="window.open('leagues')" style="cursor: pointer;">
+  <a href="home" class="active">Home</a>
   <a href="games">Games</a>
   <a href="leagues">Leagues</a>
   <a href="marketplace">Marketplace</a>
@@ -251,6 +298,7 @@ body {
     <img src="Images/3.png" class="slideshowimagestyle" onclick="window.open('creators')" style="cursor: pointer;">
   </div>
   
+  
   <a class="prev" onclick="plusSlides(-1)">❮</a>
   <a class="next" onclick="plusSlides(1)">❯</a>
   
@@ -263,16 +311,20 @@ body {
     <span class="dot" onclick="currentSlide(3)"></span> 
   </div>
 
-<img src="Images/2.png" class="responsiveimg">
+<img src="Images/roracingstats.png" class="responsiveimg">
 
 <h1 class="sidetext">Find Your Own Way</h1>
-
 <div class="scroll-container" scrolling="yes">
   <a href="games"><img src="Images/RacingGames.png"></a>
   <a href="leagues"><img src="Images/Leagues.png"></a>
   <a href="marketplace"><img src="Images/Marketplace.png"></a>
   <a href="creators"><img src="Images/Creators.png"></a>
 </div>
+
+<h1 class="sidetext">What we do.</h1>
+<video class="roracingvideotrailer" controls>
+  <source src="Images/roracing.com.mp4" type="video/mp4" >
+</video>
 
 <a href="https://discord.gg/Gb3pjn2rsE">
 <img src="Images/JoinTheDiscord.png" class="jointhediscordimg">
@@ -283,8 +335,10 @@ function myFunction() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
     x.className += " responsive";
+    document.querySelector(".logoimg").style.display = "none";
   } else {
     x.className = "topnav";
+    document.querySelector(".logoimg").style.display = "block";
   }
 }
 

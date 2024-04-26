@@ -29,15 +29,14 @@ body {
   float: left;
   display: block;
   color: #f2f2f2;
-  text-align: center;
-  padding: 14px 56px;
+  padding: 24px 36px;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 35px;
 }
 
 .topnav a:hover {
-  background: linear-gradient(to bottom, #006eff 0%, #2f00ff 100%);
-  color: rgb(255, 255, 255);
+  color: #2600ff;
+  background-color: #0f0f0f;
 }
 
 .topnav a.active {
@@ -47,6 +46,21 @@ body {
 
 .topnav .icon {
   display: none;
+}
+
+.logoimg {
+  display: block;
+  width: 323px;
+  padding-bottom: -4px;
+  margin-top: 0%;
+  position: relative;
+  margin-left: 1%;
+  text-align: center;
+  float: left;
+}
+
+.logoimg:hover {
+  opacity: 0.7;
 }
 
 .responsiveimg {
@@ -168,6 +182,17 @@ h2 {
     border: 1px solid #7300ff;
 }
 
+.invworkssponsor {
+  display: block;
+  margin-left: 8%;
+  width: 85%;
+  margin-bottom: 5%;
+}
+
+.invworkssponsor:hover {
+  opacity: 0.7;
+}
+
 @media screen and (max-width: 1400px) {
   .topnav a:not(:first-child) {display: none;}
   .topnav a.icon {
@@ -217,6 +242,26 @@ h2 {
     margin-top: -5%;
     font-size: 17px;
 }
+
+.logoimg {
+  display: block;
+  width: 62%;
+  margin-top: 3%;
+  position: relative;
+  margin-left: 2%;
+}
+
+.sponsoredsidetext {
+  font-size: 17px;
+}
+
+.invworkssponsor {
+  margin-bottom: 25%;
+}
+
+.sponosorshipcontainer {
+  margin-bottom: 40%;
+}
 }
 
 
@@ -226,6 +271,7 @@ h2 {
 <body>
 
 <div class="topnav" id="myTopnav">
+  <img src="Images/Logo.png" class="logoimg" onclick="window.open('leagues')" style="cursor: pointer;">
   <a href="index">Home</a>
   <a href="games">Games</a>
   <a href="leagues">Leagues</a>
@@ -250,12 +296,18 @@ h2 {
   <a href="https://discord.gg/sRn3yh2CFP" target="_blank"><img src="Images/BackToCommunityPNG.png"></a>
 </div>
 
+<div class="sponosorshipcontainer">
+<h1 class="sponsoredsidetext">Sponsored</h1>
+<img src="Images/INVWorks.png" class="invworkssponsor" onclick="window.open('https://www.roblox.com/groups/32313153/inv-works#!/about', '_blank')" style="cursor: pointer;">
+</div>
+
 <div class="marketplacecontainer">
     <h1 class="sidetext">Developers & Creators</h1>
     <div class="columnmarketplaceimg">
         <img src="Images/MarektplaceIMG/PolesetterMarketplace.png" onclick="window.open('https://discord.gg/f67v8tPQrd', '_blank')" style="cursor: pointer;">        
-        <img src="Images/MarektplaceIMG/Leon52LiveriesMarketplace.png" onclick="window.open('https://discord.gg/yjdPaE8RXx', '_blank')" style="cursor: pointer;">        
-        <img src="Images/THISCOULDBEYOU.png" onclick="window.open('https://discord.gg/sRn3yh2CFP', '_blank')" style="cursor: pointer;">        
+        <img src="Images/MarektplaceIMG/Leon52LiveriesMarketplace.png" onclick="window.open('https://discord.gg/9FXMQryudr', '_blank')" style="cursor: pointer;">        
+        <img src="Images/MarektplaceIMG/HowzaDesignsMarketplace.png" onclick="window.open('https://discord.gg/wCreQxhQ', '_blank')" style="cursor: pointer;">        
+        <img src="Images/MarektplaceIMG/VelocityBlendMarketplace.png" onclick="window.open('https://discord.gg/PyKTM8HEYS', '_blank')" style="cursor: pointer;">        
         <img src="Images/THISCOULDBEYOU.png" onclick="window.open('https://discord.gg/sRn3yh2CFP', '_blank')" style="cursor: pointer;">        
 
       </div>
@@ -269,8 +321,10 @@ function myFunction() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
     x.className += " responsive";
+    document.querySelector(".logoimg").style.display = "none";
   } else {
     x.className = "topnav";
+    document.querySelector(".logoimg").style.display = "block";
   }
 }
 
