@@ -24,6 +24,10 @@ body {
 .topnav {
   overflow: hidden;
   background: linear-gradient(to bottom, #000000 0%, #303030 100%);
+  position: fixed;
+  margin-top: -6%;
+  width: 100%;
+  z-index: 100;
 }
 
 .topnav a {
@@ -80,7 +84,7 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 80px;
+  margin-top: 6%;
   margin-bottom: 50px;
 }
 
@@ -146,6 +150,19 @@ h2 {
 }
 
 @media screen and (max-width: 1400px) {
+  .topnav {
+  position: relative;
+  margin-top: 0%;
+ }
+
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+    font-size: 28px;
+  }
+
+  
   .topnav.responsive {position: relative;}
   .topnav.responsive .icon {
     position: absolute;
@@ -157,6 +174,15 @@ h2 {
     display: block;
     text-align: left;
   }
+
+  .logoimg {
+  display: block;
+  width: 62%;
+  margin-top: 10px;
+  position: relative;
+  margin-left: 2%;
+  max-width: 250px;
+}
   .sidetext {
     font-size: 17px;
   }
@@ -186,16 +212,27 @@ h2 {
     margin-top: -5%;
     font-size: 17px;
 }
-
-.logoimg {
-  display: block;
-  width: 62%;
-  margin-top: 3%;
-  position: relative;
-  margin-left: 2%;
-}
 }
 
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 1;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
 
 
 </style>
@@ -203,8 +240,8 @@ h2 {
 <body>
 
 <div class="topnav" id="myTopnav">
-  <img src="Images/Logo.png" class="logoimg" onclick="window.location.href = 'index';" style="cursor: pointer;">
-  <a href="index">Home</a>
+  <img src="Images/Logo.png" class="logoimg" onclick="window.location.href = 'home';" style="cursor: pointer;">
+  <a href="home">Home</a>
   <a href="games">Games</a>
   <a href="leagues">Leagues</a>
   <a href="marketplace">Marketplace</a>
@@ -223,8 +260,8 @@ h2 {
         <img src="Images/CreatorsIMG/ZaksGamingLabs.png" onclick="window.open('https://www.youtube.com/@ZaksGamingLab', '_blank')" style="cursor: pointer;">        
         <img src="Images/CreatorsIMG/RoArthur.png" onclick="window.open('https://www.youtube.com/channel/UC2AkJWD263J8C5G80DBC4eg', '_blank')" style="cursor: pointer;">        
         <img src="Images/CreatorsIMG/TheGFORCE.png" onclick="window.open('https://www.youtube.com/channel/UCUFH1wTo9Nxcbs2LooEZufw', '_blank')" style="cursor: pointer;">        
-        <img src="Images/CreatorsIMG/Ratapotato.png" onclick="window.open('https://www.youtube.com/@Ratapotato/featured', '_blank')" style="cursor: pointer;">
-        <img src="Images/CreatorsIMG/KyanGP.png" onclick="window.open('https://www.youtube.com/@KyanGP', '_blank')" style="cursor: pointer;">              
+        <img src="Images/CreatorsIMG/Ratapotato.png" onclick="window.open('https://www.youtube.com/@Ratapotato/featured', '_blank')" style="cursor: pointer;">        
+        <img src="Images/CreatorsIMG/KyanGP.png" onclick="window.open('https://www.youtube.com/@KyanGP', '_blank')" style="cursor: pointer;">        
         <img src="https://cdn.discordapp.com/attachments/1234938882563248138/1234944809962307694/amathieu09.png?ex=6632937a&is=663141fa&hm=6caf6f8a6b7d6dd27db1f4de899827444b3922baac6afe815ca12c44e62ea074&" onclick="window.open('https://www.youtube.com/@amathieu09_', '_blank')" style="cursor: pointer;">        
 
     </div>
@@ -238,6 +275,8 @@ h2 {
 
 <img src="Images/JoinTheDiscord.png" class="jointhediscordimg" onclick="window.open('https://discord.gg/pFGvssAkww', '_blank')" style="cursor: pointer;">
 
+<button onclick="topFunction()" id="myBtn" title="Go to top">↑</button>
+
 <script>
 function myFunction() {
   var x = document.getElementById("myTopnav");
@@ -250,6 +289,8 @@ function myFunction() {
   }
 }
 
+//
+
 document.querySelectorAll('[type="color"]').forEach(($input) => {
   $input.addEventListener("change", (e) => {
     document
@@ -257,6 +298,25 @@ document.querySelectorAll('[type="color"]').forEach(($input) => {
       .style.setProperty(`--${$input.getAttribute("id")}`, $input.value);
   });
 });
+
+//
+
+let mybutton = document.getElementById("myBtn");
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
 
 </script>
 

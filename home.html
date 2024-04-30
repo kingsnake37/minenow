@@ -3,9 +3,25 @@
 <head>
 <link rel="icon" href="Images/favicon.png" type="image/png">
 <link rel="shortcut icon" href="Images/favicon.png" type="image/png">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q9VMH52ZHE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Q9VMH52ZHE');
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
+.mySlides {display: none;}
+img {vertical-align: middle; border-radius: 5px;}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -15,10 +31,10 @@ body {
 .topnav {
   overflow: hidden;
   background: linear-gradient(to bottom, #000000 0%, #303030 100%);
+  z-index: 100;
+  width: 100%;
   position: fixed;
   margin-top: -6%;
-  width: 100%;
-  z-index: 100;
 }
 
 .topnav a {
@@ -60,18 +76,77 @@ body {
   opacity: 0.7;
 }
 
+.slideshowimagestyle {
+  width: 100%;
+}
+
+.slideshow-container {
+  width: 90%;
+  position: relative;
+  margin-top: 6%;
+  margin-left: 4.8%;
+}
+
+.slideshowimagestyle:hover {
+  opacity: 0.8;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 25%;
+  width: auto;
+  padding: 36px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 150px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  color: #838383;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #000000;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .1} 
+  to {opacity: 1}
+}
+
 .responsiveimg {
   max-width: 90%;
   height: auto;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 20px;
-}
-
-.responsiveimg:hover {
-  opacity: 0.65;
-  border: 1px solid #7d00c0;
+  margin-top: 40px;
 }
 
 .scroll-container {
@@ -98,7 +173,6 @@ body {
 
 .scroll-container img:hover {
   border: 1px solid #7300ff;
-  opacity: 0.8;
 }
 
 .jointhediscordimg {
@@ -118,20 +192,7 @@ body {
 .sidetext {
   text-align: center;
  color: white;
- margin-top: 90px;
-}
-
-.sponsoredsidetext{
-  text-align: center;
- color: white;
- margin-top: 6%;
-}
-
-.newsidetext{
-  text-align: center;
- color: white;
- margin-top: -13px;
- font-size: small;
+ margin-top: 80px;
 }
 
 ::-webkit-scrollbar {
@@ -151,11 +212,10 @@ body {
   background: #7700b3; 
 }
 
-h2 {
-  font-size: 100px;
-  text-align: center;
-  color: white;
-  margin-bottom: 100px;
+.roracingvideotrailer {
+  width: 75%;
+  height: 25%;
+  margin-left: 12%;
 }
 
 #myBtn {
@@ -178,16 +238,9 @@ h2 {
   background-color: #555;
 }
 
-@media screen and (max-width: 1400px) {
-  .topnav a:not(:first-child) {display: none;}
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
-}
-
-@media screen and (max-width: 1400px) {
-  .topnav {
+@media screen and (max-width: 1500px) {
+  
+ .topnav {
   position: relative;
   margin-top: 0%;
  }
@@ -222,34 +275,51 @@ h2 {
 }
 
   .sidetext {
-    font-size: 19px;
+    font-size: 17px;
   }
-  .scroll-container img {
-    width: 80%;
-  }
-  .bestratedgamescontainer {
-    margin-top: -65px;
-  }
-  .newsidetext {
-    width: 90%;
-    font-size: 8px;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+
+  .slideshow-container {
+  width: 90%;
+  position: relative;
+  margin-top: 2%;
+  margin-left: 4.5%;
 }
-.jointhediscordimg {
-  margin-top: 10%;
+
+  .dot {
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: 0.6s ease;
 }
+ .next, .prev {
+  font-size: 34px;
+  top: 35%;
+  padding: 18px;
+ }
+
+ .active, .dot:hover {
+  background-color: #000000;
+}
+
+.roracingvideotrailer {
+  width: 90%;
+  height: 25%;
+  margin-left: 5%;
+}
+
 }
 
 </style>
 </head>
 <body>
-
 <div class="topnav" id="myTopnav">
   <img src="Images/Logo.png" class="logoimg" onclick="window.location.href = 'home';" style="cursor: pointer;">
-  <a href="home">Home</a>
-  <a href="games" class="active">Games</a>
+  <a href="index" class="active">Home</a>
+  <a href="games">Games</a>
   <a href="leagues">Leagues</a>
   <a href="marketplace">Marketplace</a>
   <a href="creators">Content Creators</a>
@@ -259,26 +329,47 @@ h2 {
   </a>
 </div>
 
-<h1 class="sponsoredsidetext">Sponsored</h1>
-<img src="Images/WocSponsor.png" class="responsiveimg" onclick="window.open('https://discord.gg/Xp3RzdUdS8', '_blank')" style="cursor: pointer;">
+<div class="slideshow-container">
 
-<div class="bestratedgamescontainer">
-<h1 class="sidetext">Best Rated Games</h1>
-<div class="scroll-container" scrolling="yes">
-  <a href="https://www.roblox.com/games/5976159288/2024-Formula-Apex-Racing" target="_blank"><img src="Images/FormulaApex.png"></a>
-  <a href="https://www.roblox.com/games/4864763388/2024-Formula-X-Project-Trackday" target="_blank"><img src="Images/ProjectTrackday.png"></a>
-  <a href="https://www.roblox.com/games/4992570197/ROBLOX-Rally-Racing" target="_blank"><img src="Images/RobloxRallyRacing.png"></a>
-  <a href="https://www.roblox.com/games/5803116693/ION-FORMULA-RACING-2023" target="_blank"><img src="Images/IonFormulaRacing.png"></a>
-  <a href="https://www.roblox.com/games/4656030186/Formula-ROBLOX-1-20-3" target="_blank"><img src="Images/FormulaRoblox.png"></a>
-  <a href="https://www.roblox.com/games/6575111643/BAHRAIN-RFA-F1-FORMULA-1-RACING-2024#!/game-instances" target="_blank"><img src="Images/RFA.png"></a>
+  <div class="mySlides fade">
+   <img src="Images/1.png" class="slideshowimagestyle" onclick="window.location.href = 'leagues';" style="cursor: pointer;">
+  </div>
+  
+  <div class="mySlides fade">
+    <img src="Images/2img.png" class="slideshowimagestyle" onclick="window.location.href = 'games';" style="cursor: pointer;">
+  </div>
+  
+  <div class="mySlides fade">
+    <img src="Images/3.png" class="slideshowimagestyle" onclick="window.location.href = 'creators';" style="cursor: pointer;">
+  </div>
+  
+  
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+  
+  </div>
+  <br>
+  
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span> 
+    <span class="dot" onclick="currentSlide(2)"></span> 
+    <span class="dot" onclick="currentSlide(3)"></span> 
+  </div>
 
-</div>
-</div>
-<h1 class="sidetext">New & Upcoming Games</h1>
-<h1 class="newsidetext">DM ME ON DISCORD TO GET YOUR GAME LISTED HERE FOR FREE!</h1>
+<img src="Images/roracingstats.png" class="responsiveimg">
+
+<h1 class="sidetext">Find Your Own Way</h1>
 <div class="scroll-container" scrolling="yes">
-  <a href="https://discord.gg/Gb3pjn2rsE"><img src="Images/GamesDirectMessage.png"></a>
+  <a href="games"><img src="Images/RacingGames.png"></a>
+  <a href="leagues"><img src="Images/Leagues.png"></a>
+  <a href="marketplace"><img src="Images/Marketplace.png"></a>
+  <a href="creators"><img src="Images/Creators.png"></a>
 </div>
+
+<h1 class="sidetext">What we do.</h1>
+<video class="roracingvideotrailer" controls>
+  <source src="Images/roracing.com.mp4" type="video/mp4" >
+</video>
 
 <img src="Images/JoinTheDiscord.png" class="jointhediscordimg" onclick="window.open('https://discord.gg/pFGvssAkww', '_blank')" style="cursor: pointer;">
 
@@ -296,8 +387,6 @@ function myFunction() {
   }
 }
 
-//
-
 document.querySelectorAll('[type="color"]').forEach(($input) => {
   $input.addEventListener("change", (e) => {
     document
@@ -305,6 +394,35 @@ document.querySelectorAll('[type="color"]').forEach(($input) => {
       .style.setProperty(`--${$input.getAttribute("id")}`, $input.value);
   });
 });
+
+//
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
 
 //
 
