@@ -1,16 +1,475 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<link rel="icon" href="Images/favicon.png" type="image/png">
+<link rel="shortcut icon" href="Images/favicon.png" type="image/png">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q9VMH52ZHE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Q9VMH52ZHE');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.mySlides {display: none;}
+img {vertical-align: middle; border-radius: 5px;}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  margin-bottom: 50px;
+  background-color: #191919;
+}
+
+.topnav {
+  overflow: hidden;
+  background: linear-gradient(to bottom, #000000 0%, #303030 100%);
+  z-index: 100;
+  width: 100%;
+  position: fixed;
+  margin-top: -6%;
+}
+
+.topnav a {
+  text-align: center;
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  padding: 24px 36px;
+  text-decoration: none;
+  font-size: 35px;
+}
+
+.topnav a:hover {
+  color: #2600ff;
+  background-color: #0f0f0f;
+}
+
+.topnav a.active {
+  background: linear-gradient(to right, #000b6b 0%, #3a0059 100%);
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+.logoimg {
+  display: block;
+  width: 323px;
+  padding-bottom: -4px;
+  margin-top: 0%;
+  position: relative;
+  margin-left: 1%;
+  text-align: center;
+  float: left;
+}
+
+.logoimg:hover {
+  opacity: 0.7;
+}
+
+.slideshowimagestyle {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.slideshow-container {
+  width: 50%;
+  position: relative;
+  margin-top: 6%;
+  margin-left: 25%;
+}
+
+.slideshowimagestyle:hover {
+  opacity: 0.8;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 26%;
+  width: auto;
+  padding: 26px;
+  margin-top: -9px;
+  color: white;
+  font-weight: bold;
+  font-size: 70px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  color: #838383;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #000000;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .1} 
+  to {opacity: 1}
+}
+
+.responsiveimg {
+  width: 90%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+}
+
+.scroll-container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: black;
+  overflow: auto;
+  white-space: nowrap;
+  padding: 10px;
+  color: rgb(21, 21, 21);
+  border-radius: 5px;
+  scrollbar-width: thin;
+
+}
+
+.scroll-container img {
+  padding: 10px;
+  background-color: black;
+  color: black;
+  width: 30%;
+  margin-left: 1%;
+}
+
+.scroll-container img:hover {
+  border: 1px solid #7300ff;
+}
+
+.sidetext {
+  text-align: center;
+ color: white;
+ margin-top: 80px;
+}
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(140, 0, 255); 
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7700b3; 
+}
+
+.roracingvideotrailer {
+  width: 75%;
+  height: 25%;
+  margin-left: 12%;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 1;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 1500px) {
+  
+ .topnav {
+  position: relative;
+  margin-top: 0%;
+ }
+
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+    font-size: 28px;
+  }
+
+  
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .logoimg {
+  display: block;
+  width: 62%;
+  margin-top: 10px;
+  position: relative;
+  margin-left: 2%;
+  max-width: 250px;
+}
+
+  .sidetext {
+    font-size: 17px;
+  }
+
+  .slideshow-container {
+  width: 90%;
+  position: relative;
+  margin-top: 2%;
+  margin-left: 5%;
+}
+
+  .dot {
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: 0.6s ease;
+}
+ .next, .prev {
+  font-size: 34px;
+  top: 35%;
+  padding: 18px;
+ }
+
+ .active, .dot:hover {
+  background-color: #000000;
+}
+
+.roracingvideotrailer {
+  width: 90%;
+  height: 25%;
+  margin-left: 5%;
+}
+
+.joinleaguebutton {
+    width: 75%;
+    margin-left: 0;
+    position: relative;
+    left: -16%;
+    margin-top: 8%;
+}
+
+
+}
+
+h2 {
+  color: white;
+  text-align: center;
+  font-size: 35px;
+}
+
+p {
+  color: white;
+  text-align: center;
+  word-wrap: break-word;
+  font-size: large;
+
+}
+
+.aboutcontainer {
+  width: 70%;
+  margin-left: 15%;
+}
+
+.joinleaguebutton {
+  margin-left: 29.5%;
+  margin-top: 8%;
+}
+
+.joinleaguebutton:hover {
+opacity: 0.7;
+}
+
+.dotcontainer {
+    margin-left: 48.3%;
+}
+
+</style>
 </head>
 <body>
+<div class="topnav" id="myTopnav">
+  <img src="Images/Logo.png" class="logoimg" onclick="window.location.href = 'index';" style="cursor: pointer;">
+  <a href="games">Games</a>
+  <a href="" class="active">World Of Cups</a>
+
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<div class="slideshow-container">
+
+  <div class="mySlides fade">
+   <img src="https://cdn.discordapp.com/attachments/1116654416804712528/1234949220704845928/image.png?ex=66329796&is=66314616&hm=68cd902c033f112e3ceb0af36091009da79b954d9e40f5b944e180d660fa18ba&" class="slideshowimagestyle">
+  </div>
+  
+  <div class="mySlides fade">
+    <img src="https://cdn.discordapp.com/attachments/1116654416804712528/1234949222139297893/1FF0C339-CCEC-4107-B868-CB29EA084B5E.png?ex=66329796&is=66314616&hm=b47273b41892e760149f66d67d80f33c6d47b5f42893c1d69b1b9eff9d5c9ea9&" class="slideshowimagestyle">
+  </div>
+  
+  <div class="mySlides fade">
+    <img src="https://cdn.discordapp.com/attachments/1116654416804712528/1234949221497704550/8CAF2BA5-A9F6-40C0-BBA9-97577CA7C8A9.jpg?ex=66329796&is=66314616&hm=4f418bfbe56eef43dc6b1b10690af1c361f13d6cf9719a5ffceb970997be9c2d&" class="slideshowimagestyle">
+  </div>
+  
+  
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+  
+  </div>
+  <br>
+  
+  <div class="dotcontainer">
+    <span class="dot" onclick="currentSlide(1)"></span> 
+    <span class="dot" onclick="currentSlide(2)"></span> 
+    <span class="dot" onclick="currentSlide(3)"></span> 
+  </div>
+
+  <h2>ABOUT WORLD OF CUPS</h2>
+  
+  <div class="aboutcontainer">
+  <p class="p">Welcome to World of Cups!
+
+    This game is like no other, providing you with a unique chance to drive your dream car, your favourite car, or an ordinary Toyota Corolla. 
+    World of Cups has been striving to give the player the most immersive experience. 
     
-</body>
+    Many will look at the top, 
+    But only a few make it. 
+    
+    Do you have what it takes?</p>
+</div>
+
+<img src="https://cdn.discordapp.com/attachments/1234948070769299466/1234948091937947748/JoinButton.png?ex=66329689&is=66314509&hm=1850d91a43f985d2fcd711a36e656c672658e21a964f4ab1f87a025f37c44a81&" onclick="window.open('https://discord.gg/gGAuWrRK6t', '_blank')" style="cursor: pointer;" class="joinleaguebutton">
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">↑</button>
+
 <script>
-if (window.location.href !== "http://roracing.com/worldofcups") {
-    window.location.href = "http://roracing.com/games";
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+    document.querySelector(".logoimg").style.display = "none";
+  } else {
+    x.className = "topnav";
+    document.querySelector(".logoimg").style.display = "block";
+  }
 }
+
+document.querySelectorAll('[type="color"]').forEach(($input) => {
+  $input.addEventListener("change", (e) => {
+    document
+      .querySelector(".scroller")
+      .style.setProperty(`--${$input.getAttribute("id")}`, $input.value);
+  });
+});
+
+//
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+
+//
+
+let mybutton = document.getElementById("myBtn");
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
 </script>
+
+</body>
 </html>
