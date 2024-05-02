@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <!-- Add jQuery library -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Add Lazy plugin -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
+
 <link rel="icon" href="Images/favicon.png" type="image/png">
 <link rel="shortcut icon" href="Images/favicon.png" type="image/png">
 <!-- Google tag (gtag.js) -->
@@ -349,6 +356,10 @@ h2 {
   background-color: #555;
 }
 
+img.lazy {
+        display: block;
+    }
+            
 </style>
 </head>
 <body>
@@ -398,16 +409,16 @@ h2 {
       <div class="row" id="PALeagues">
           <h1 class="sidetext">Project Apex Based Leagues</h1>
           <div class="columnleagueimg">
-              <img src="Images/LeaguesIMG/ApexRacing2021PA.png" onclick="window.open('https://discord.gg/DSSfyVcV4h', '_blank')" style="cursor: pointer;" loading="lazy">        
-              <img src="Images/LeaguesIMG/AgentRacingWorldChampionshipPA.png" onclick="window.open('https://discord.gg/JrMrZBkpqK', '_blank')" style="cursor: pointer;" loading="lazy">        
-              <img src="Images/LeaguesIMG/ApexRacing_2010PA.png" onclick="window.open('https://discord.gg/ABAEFax8YQ', '_blank')" style="cursor: pointer;" loading="lazy">        
-              <img src="Images/LeaguesIMG/ApexRacing2007PA.png" onclick="window.open('https://discord.gg/eeQ66Ag6t2', '_blank')" style="cursor: pointer;" loading="lazy">   
-              <img src="Images/LeaguesIMG/EXAutoRacingPA.png" onclick="window.open('https://discord.gg/aKrX7BxXKw', '_blank')" style="cursor: pointer;" loading="lazy"> 
-              <img src="Images/LeaguesIMG/ProjectApexTrainingLeaguePA.png" onclick="window.open('https://discord.gg/neEW4M88dm', '_blank')" style="cursor: pointer;" loading="lazy">    
-              <img src="Images/LeaguesIMG/ProjectApexRacingAcademyPA.png" onclick="window.open('https://discord.gg/cwkdZSDxD5', '_blank')" style="cursor: pointer;" loading="lazy">        
-              <img src="Images/LeaguesIMG/AeroLineRacingLeaguePA.png" onclick="window.open('https://discord.gg/ygfaQYuZw6', '_blank')" style="cursor: pointer;" loading="lazy">        
-              <img src="Images/LeaguesIMG/ApexAutoRacing2024PA.png" onclick="window.open('https://discord.gg/S5FQjfRS', '_blank')" style="cursor: pointer;" loading="lazy">    
-              <img src="Images/LeaguesIMG/LeagueSpotsAvailable.png" onclick="window.open('https://discord.gg/sRn3yh2CFP', '_blank')" style="cursor: pointer;" loading="lazy">    
+              <img data-src="Images/LeaguesIMG/ApexRacing2021PA.png" onclick="window.open('https://discord.gg/DSSfyVcV4h', '_blank')" style="cursor: pointer;" class="lazy">        
+              <img data-src="Images/LeaguesIMG/AgentRacingWorldChampionshipPA.png" onclick="window.open('https://discord.gg/JrMrZBkpqK', '_blank')" style="cursor: pointer;" class="lazy">        
+              <img data-src="Images/LeaguesIMG/ApexRacing_2010PA.png" onclick="window.open('https://discord.gg/ABAEFax8YQ', '_blank')" style="cursor: pointer;" class="lazy">        
+              <img data-src="Images/LeaguesIMG/ApexRacing2007PA.png" onclick="window.open('https://discord.gg/eeQ66Ag6t2', '_blank')" style="cursor: pointer;" class="lazy">   
+              <img data-src="Images/LeaguesIMG/EXAutoRacingPA.png" onclick="window.open('https://discord.gg/aKrX7BxXKw', '_blank')" style="cursor: pointer;" class="lazy"> 
+              <img data-src="Images/LeaguesIMG/ProjectApexTrainingLeaguePA.png" onclick="window.open('https://discord.gg/neEW4M88dm', '_blank')" style="cursor: pointer;" class="lazy">    
+              <img data-src="Images/LeaguesIMG/ProjectApexRacingAcademyPA.png" onclick="window.open('https://discord.gg/cwkdZSDxD5', '_blank')" style="cursor: pointer;" class="lazy">        
+              <img data-src="Images/LeaguesIMG/AeroLineRacingLeaguePA.png" onclick="window.open('https://discord.gg/ygfaQYuZw6', '_blank')" style="cursor: pointer;" class="lazy">        
+              <img data-src="Images/LeaguesIMG/ApexAutoRacing2024PA.png" onclick="window.open('https://discord.gg/S5FQjfRS', '_blank')" style="cursor: pointer;" class="lazy">    
+              <img data-src="Images/LeaguesIMG/LeagueSpotsAvailable.png" onclick="window.open('https://discord.gg/sRn3yh2CFP', '_blank')" style="cursor: pointer;" class="lazy">    
             </div>
       </div>
       
@@ -415,27 +426,27 @@ h2 {
       <div class="row" id="CustomLeagues">
         <h1 class="sidetext">Custom Made Leagues</h1>
         <div class="columnleagueimg">
-          <img src="Images/LeaguesIMG/ImpulseXCustom.png" onclick="window.open('https://discord.gg/8GWnhUpaMS', '_blank')" style="cursor: pointer;" loading="lazy">
-          <img src="Images/LeaguesIMG/InternationalMotorRacingProjectCustom.png" onclick="window.open('https://discord.gg/PRYnzs7EXh', '_blank')" style="cursor: pointer;" loading="lazy">
-          <img src="Images/LeaguesIMG/FormulaE2024Custom.png" onclick="window.open('https://discord.gg/DmudvVJkuc', '_blank')" style="cursor: pointer;" loading="lazy">
-       <img src="Images/LeaguesIMG/FormulaERobloxLeagueCustom.png" onclick="window.open('https://discord.gg/c2t9HkQzef', '_blank')" style="cursor: pointer;" loading="lazy">
-          <img src="Images/LeaguesIMG/RobloxSuperRacingLeagueCustom.png" onclick="window.open('https://discord.gg/7t5es9M3AA', '_blank')" style="cursor: pointer;" loading="lazy">
-          <img src="Images/LeaguesIMG/Formula1ExtremeCustom.png" onclick="window.open('https://discord.gg/reT4N2JgmG', '_blank')" style="cursor: pointer;" loading="lazy">
-       <img src="Images/LeaguesIMG/SIKOEnduranceChampionshipCustom.png" onclick="window.open('https://discord.gg/ByNEfayRpM', '_blank')" style="cursor: pointer;" loading="lazy">
-       <img src="Images/LeaguesIMG/ICRLIndycarSeriesCustom.png" onclick="window.open('https://discord.gg/ksYNppET5w', '_blank')" style="cursor: pointer;" loading="lazy">
-       <img src="Images/LeaguesIMG/AllStarLeagueLateModelsCustom.png" onclick="window.open('https://discord.gg/eKQKgVz', '_blank')" style="cursor: pointer;" loading="lazy">
-      <img src="Images/LeaguesIMG/EvolutionRacingSeriesCustom.png" onclick="window.open('https://discord.gg/dhmvcVzAaV', '_blank')" style="cursor: pointer;" loading="lazy">
-      <img src="Images/LeaguesIMG/NARARacingLeagueCustom.png" onclick="window.open('https://discord.gg/k8BxA6TpRd', '_blank')" style="cursor: pointer;" loading="lazy">
-      <img src="Images/LeaguesIMG/RaceForTheCupCustom.png" onclick="window.open('https://discord.gg/9hhj92HXsn', '_blank')" style="cursor: pointer;" loading="lazy">
-      <img src="Images/LeaguesIMG/XFAFormula1Custom.png" onclick="window.open('https://discord.gg/scpBppjtWx', '_blank')" style="cursor: pointer;" loading="lazy">
-      <img src="Images/LeaguesIMG/Ro-Formula1Custom.png" onclick="window.open('https://discord.gg/rzx9ydjChd', '_blank')" style="cursor: pointer;" loading="lazy">
-      <img src="Images/LeaguesIMG/InternationalEnduranceChampionshipCustom.png" onclick="window.open('https://discord.gg/A6C62w4Gbg', '_blank')" style="cursor: pointer;" loading="lazy">
-      <img src="Images/LeaguesIMG/InternationalTankChassisSeriesCustom.png" onclick="window.open('https://discord.gg/Y7WPDZmmhd', '_blank')" style="cursor: pointer;" loading="lazy">
-      <img src="Images/LeaguesIMG/UREnduranceChampionshipCustom.png" onclick="window.open('https://discord.gg/AHSDsUw3', '_blank')" style="cursor: pointer;" loading="lazy">
-      <img src="Images/LeaguesIMG/ShortCouseAllStarsCustom.png" onclick="window.open('https://discord.gg/rVzXTjKZ7D', '_blank')" style="cursor: pointer;" loading="lazy">
-      <img src="Images/LeaguesIMG/IndyCarRacingSuperLeagueCustom.png" onclick="window.open('https://discord.com/invite/fHx6UUJg', '_blank')" style="cursor: pointer;" loading="lazy">
-      <img src="Images/LeaguesIMG/FormulaRacingSuperLeagueCustom.png" onclick="window.open('https://discord.gg/Hs2gM9bT9S', '_blank')" style="cursor: pointer;" loading="lazy">
-      <img src="Images/LeaguesIMG/LeagueSpotsAvailable.png" onclick="window.open('https://discord.gg/sRn3yh2CFP', '_blank')" style="cursor: pointer;" loading="lazy">
+          <img data-src="Images/LeaguesIMG/ImpulseXCustom.png" onclick="window.open('https://discord.gg/8GWnhUpaMS', '_blank')" style="cursor: pointer;" class="lazy">
+          <img data-src="Images/LeaguesIMG/InternationalMotorRacingProjectCustom.png" onclick="window.open('https://discord.gg/PRYnzs7EXh', '_blank')" style="cursor: pointer;" class="lazy">
+          <img data-src="Images/LeaguesIMG/FormulaE2024Custom.png" onclick="window.open('https://discord.gg/DmudvVJkuc', '_blank')" style="cursor: pointer;" class="lazy">
+       <img data-src="Images/LeaguesIMG/FormulaERobloxLeagueCustom.png" onclick="window.open('https://discord.gg/c2t9HkQzef', '_blank')" style="cursor: pointer;" class="lazy">
+          <img data-src="Images/LeaguesIMG/RobloxSuperRacingLeagueCustom.png" onclick="window.open('https://discord.gg/7t5es9M3AA', '_blank')" style="cursor: pointer;" class="lazy">
+          <img data-src="Images/LeaguesIMG/Formula1ExtremeCustom.png" onclick="window.open('https://discord.gg/reT4N2JgmG', '_blank')" style="cursor: pointer;" class="lazy">
+       <img data-src="Images/LeaguesIMG/SIKOEnduranceChampionshipCustom.png" onclick="window.open('https://discord.gg/ByNEfayRpM', '_blank')" style="cursor: pointer;" class="lazy">
+       <img data-src="Images/LeaguesIMG/ICRLIndycarSeriesCustom.png" onclick="window.open('https://discord.gg/ksYNppET5w', '_blank')" style="cursor: pointer;" class="lazy">
+       <img data-src="Images/LeaguesIMG/AllStarLeagueLateModelsCustom.png" onclick="window.open('https://discord.gg/eKQKgVz', '_blank')" style="cursor: pointer;" class="lazy">
+      <img data-src="Images/LeaguesIMG/EvolutionRacingSeriesCustom.png" onclick="window.open('https://discord.gg/dhmvcVzAaV', '_blank')" style="cursor: pointer;" class="lazy">
+      <img data-src="Images/LeaguesIMG/NARARacingLeagueCustom.png" onclick="window.open('https://discord.gg/k8BxA6TpRd', '_blank')" style="cursor: pointer;" class="lazy">
+      <img data-src="Images/LeaguesIMG/RaceForTheCupCustom.png" onclick="window.open('https://discord.gg/9hhj92HXsn', '_blank')" style="cursor: pointer;" class="lazy">
+      <img data-src="Images/LeaguesIMG/XFAFormula1Custom.png" onclick="window.open('https://discord.gg/scpBppjtWx', '_blank')" style="cursor: pointer;" class="lazy">
+      <img data-src="Images/LeaguesIMG/Ro-Formula1Custom.png" onclick="window.open('https://discord.gg/rzx9ydjChd', '_blank')" style="cursor: pointer;" class="lazy">
+      <img data-src="Images/LeaguesIMG/InternationalEnduranceChampionshipCustom.png" onclick="window.open('https://discord.gg/A6C62w4Gbg', '_blank')" style="cursor: pointer;" class="lazy">
+      <img data-src="Images/LeaguesIMG/InternationalTankChassisSeriesCustom.png" onclick="window.open('https://discord.gg/Y7WPDZmmhd', '_blank')" style="cursor: pointer;" class="lazy">
+      <img data-src="Images/LeaguesIMG/UREnduranceChampionshipCustom.png" onclick="window.open('https://discord.gg/AHSDsUw3', '_blank')" style="cursor: pointer;" class="lazy">
+      <img data-src="Images/LeaguesIMG/ShortCouseAllStarsCustom.png" onclick="window.open('https://discord.gg/rVzXTjKZ7D', '_blank')" style="cursor: pointer;" class="lazy">
+      <img data-src="Images/LeaguesIMG/IndyCarRacingSuperLeagueCustom.png" onclick="window.open('https://discord.com/invite/fHx6UUJg', '_blank')" style="cursor: pointer;" class="lazy">
+      <img data-src="Images/LeaguesIMG/FormulaRacingSuperLeagueCustom.png" onclick="window.open('https://discord.gg/Hs2gM9bT9S', '_blank')" style="cursor: pointer;" class="lazy">
+      <img data-src="Images/LeaguesIMG/LeagueSpotsAvailable.png" onclick="window.open('https://discord.gg/sRn3yh2CFP', '_blank')" style="cursor: pointer;" class="lazy">
         </div>
       </div>
       
@@ -452,6 +463,11 @@ h2 {
 <button onclick="topFunction()" id="myBtn" title="Go to top">↑</button>
 
 <script>
+
+$(function() {
+        $('.lazy').lazy();
+    });
+
 function myFunction() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
