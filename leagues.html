@@ -363,37 +363,6 @@ img.lazy {
 </style>
 </head>
 <body>
-  
-  <script>
-  // Function to shuffle an array
-  function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
-  }
-
-  // Function to randomize the order of leagues inside each container
-  function randomizeLeagues() {
-    const containers = document.querySelectorAll('.leaguescontainer .columnleagueimg');
-    
-    containers.forEach(container => {
-      const leagues = container.querySelectorAll('img');
-      const leagueArray = Array.from(leagues);
-      const shuffledLeagues = shuffle(leagueArray);
-      
-      // Remove existing leagues from the container
-      leagueArray.forEach(league => container.removeChild(league));
-      
-      // Append the shuffled leagues back to the container in the new order
-      shuffledLeagues.forEach(league => container.appendChild(league));
-    });
-  }
-
-  // Call the randomizeLeagues function when the page loads
-  window.addEventListener('load', randomizeLeagues);
-</script>
 
 <div class="topnav" id="myTopnav">
   <img src="Images/Logo.png" class="logoimg" onclick="window.location.href = 'home';" style="cursor: pointer;">
