@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" href="Images/favicon.png" type="image/png">
-<link rel="shortcut icon" href="Images/favicon.png" type="image/png">
+    <link rel="icon" href="Images/favicon.png" type="image/png">
+    <link rel="shortcut icon" href="Images/favicon.png" type="image/png">
     <title>Document</title>
 </head>
 <body>
     
 </body>
 <script>
-if (window.location.href !== "http://roracing.com/index") {
-    window.location.href = "http://roracing.com/home";
-}
+    if (window.location.href.indexOf("index") === -1) {
+        window.location.href = "http://roracing.com/home";
+    }
 </script>
 </html>
