@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Home</title>
 <link rel="icon" href="Images/favicon.png" type="image/png">
 <link rel="shortcut icon" href="Images/favicon.png" type="image/png">
 <!-- Google tag (gtag.js) -->
@@ -25,7 +26,7 @@ html {
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #191919;
+  background-color: #121212;
 }
 
 .topnav {
@@ -35,41 +36,37 @@ body {
   width: 100%;
   position: fixed;
   margin-top: -6%;
+  text-align: center; /* Center align the text */
 }
 
 .topnav a {
-  text-align: center;
-  float: left;
-  display: block;
+  display: inline-block;
   color: #f2f2f2;
-  padding: 24px 36px;
+  padding: 24px 30px;
   text-decoration: none;
-  font-size: 35px;
+  font-size: 25px;
+  font-weight: 500;
 }
+
+.logoimg {
+  display: inline-block;
+  margin-top: -8px;
+  width: 260px;
+  margin-right: 19%;
+}
+
 
 .topnav a:hover {
   color: #2600ff;
-  background-color: #0f0f0f;
 }
 
 .topnav a.active {
-  background: linear-gradient(to right, #000b6b 0%, #3a0059 100%);
-  color: white;
+  color: #ffffff;
+  background: linear-gradient(to bottom, #000000 0%, #303030 100%);
 }
 
 .topnav .icon {
   display: none;
-}
-
-.logoimg {
-  display: block;
-  width: 323px;
-  padding-bottom: -4px;
-  margin-top: 0%;
-  position: relative;
-  margin-left: 1%;
-  text-align: center;
-  float: left;
 }
 
 .logoimg:hover {
@@ -238,9 +235,8 @@ body {
   background-color: #555;
 }
 
-@media screen and (max-width: 1500px) {
-  
- .topnav {
+@media screen and (max-width: 1800px) {
+  .topnav {
   position: relative;
   margin-top: 0%;
  }
@@ -249,7 +245,7 @@ body {
   .topnav a.icon {
     float: right;
     display: block;
-    font-size: 28px;
+    font-size: 22px;
   }
 
   
@@ -266,59 +262,62 @@ body {
   }
 
   .logoimg {
-  display: block;
+  display: inline-block;
   width: 62%;
   margin-top: 10px;
-  position: relative;
+  float: left;
   margin-left: 2%;
-  max-width: 250px;
+  max-width: 200px;
 }
 
-  .sidetext {
-    font-size: 17px;
-  }
-
-  .slideshow-container {
-  width: 90%;
-  position: relative;
-  margin-top: 2%;
-  margin-left: 4.5%;
-}
-
-  .dot {
-  cursor: pointer;
-  height: 10px;
-  width: 10px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: 0.6s ease;
-}
- .next, .prev {
-  font-size: 34px;
-  top: 35%;
-  padding: 18px;
+   .sidetext {
+     font-size: 17px;
+   }
+ 
+   .slideshow-container {
+     width: 90%;
+     position: relative;
+     margin-top: 2%;
+     margin-left: 4.5%;
+   }
+ 
+   .dot {
+     cursor: pointer;
+     height: 10px;
+     width: 10px;
+     margin: 0 2px;
+     background-color: #bbb;
+     border-radius: 50%;
+     display: inline-block;
+     transition: 0.6s ease;
+   }
+ 
+   .next, .prev {
+     font-size: 34px;
+     top: 35%;
+     padding: 18px;
+   }
+ 
+   .active, .dot:hover {
+     background-color: #000000;
+   }
+ 
+   .roracingvideotrailer {
+     width: 90%;
+     height: 25%;
+     margin-left: 5%;
+   }
+ 
  }
-
- .active, .dot:hover {
-  background-color: #000000;
-}
-
-.roracingvideotrailer {
-  width: 90%;
-  height: 25%;
-  margin-left: 5%;
-}
-
-}
+ 
 
 </style>
 </head>
 <body>
 <div class="topnav" id="myTopnav">
   <img src="Images/Logo.png" class="logoimg" onclick="window.location.href = 'home';" style="cursor: pointer;">
-  <a href="index" class="active">Home</a>
+  <a href="home">Home</a>
+  <a href="news">News</a>
   <a href="games">Games</a>
   <a href="leagues">Leagues</a>
   <a href="marketplace">Marketplace</a>
@@ -383,7 +382,7 @@ function myFunction() {
     document.querySelector(".logoimg").style.display = "none";
   } else {
     x.className = "topnav";
-    document.querySelector(".logoimg").style.display = "block";
+    document.querySelector(".logoimg").style.display = "inline-block";
   }
 }
 
