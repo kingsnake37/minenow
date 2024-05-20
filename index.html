@@ -12,8 +12,11 @@
     
 </body>
 <script>
-    if (window.location.href.indexOf("https://roracing.com/index") === -1) {
-        window.location.href = "http://roracing.com/home";
-    }
+window.addEventListener('load', function() {
+  const targetUrl = 'https://roracing.com/home';
+  if (window.location.href !== targetUrl) {
+    window.location.href = targetUrl;
+  }
+});
 </script>
 </html>
