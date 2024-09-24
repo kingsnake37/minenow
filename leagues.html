@@ -476,7 +476,7 @@ img.lazy {
 <img data-src="Images/LeaguesIMG/PummuStockCarChampionshipCustom.webp" onclick="window.open('https://discord.gg/pscc', '_blank')" style="cursor: pointer;" class="lazy">
 <img data-src="Images/LeaguesIMG/FormulaXCustom.webp" onclick="window.open('https://discord.gg/GBMervFpnb', '_blank')" style="cursor: pointer;" class="lazy">
 <img data-src="Images/LeaguesIMG/RobloxKartingAssociationCustom.webp" onclick="window.open('https://discord.gg/C6pJQ7vGNE', '_blank')" style="cursor: pointer;" class="lazy">
-<img data-src="Images/LeaguesIMG/VerizonRacingAssociationCustom.webp" onclick="window.open('https://discord.gg/EtEuEpu5MQ', '_blank')" style="cursor: pointer;" class="lazy">
+<img data-src="Images/LeaguesIMG/VerizonRacingAssociationCustom.webp" onclick="window.open('https://discord.gg/EtEuEpu5MQ', '_blank')" style="cursor: pointer;" class="lazy" id="First">
 <img data-src="Images/LeaguesIMG/EvolutionRacingSeriesCustom.webp" onclick="window.open('https://discord.gg/dhmvcVzAaV', '_blank')" style="cursor: pointer;" class="lazy">
 <img data-src="Images/LeaguesIMG/NARARacingLeagueCustom.webp" onclick="window.open('https://discord.gg/k8BxA6TpRd', '_blank')" style="cursor: pointer;" class="lazy">
 <img data-src="Images/LeaguesIMG/RaceForTheCupCustom.webp" onclick="window.open('https://discord.gg/9hhj92HXsn', '_blank')" style="cursor: pointer;" class="lazy">
@@ -554,6 +554,22 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
+  function scrollToImageById(imageId) {
+        const targetImage = document.getElementById(imageId);
+        if (targetImage) {
+            targetImage.scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to the image
+        }
+    }
+
+    // Extract the last part of the URL path, which should be the image identifier
+    const pathParts = window.location.pathname.split('/');
+    const imageId = pathParts[pathParts.length - 1];  // Get the last segment of the URL
+
+    // Attempt to scroll to the image with this ID if it exists
+    if (imageId) {
+        scrollToImageById(imageId);
+    }
 
 </script>
 
