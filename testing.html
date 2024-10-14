@@ -1,1 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
+  <link rel="icon" href="Images/favicon.png" type="image/png">
+<link rel="shortcut icon" href="Images/favicon.png" type="image/png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>Document</title>
+</head>
+<style>
+    html {
+    scroll-behavior: smooth;
+}
 
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: rgb(9, 9, 9);
+  z-index: 100;
+  width: 100%;
+  position: fixed;
+  text-align: center; /* Center align the text */
+  margin-top: 0;
+}
+
+.topnav a {
+  display: inline-block;
+  color: #ffffff;
+  padding: 24px 30px;
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+  text-decoration: none;
+}
+
+.logoimg {
+  display: inline-block;
+  margin-bottom: -27px;
+  width: 260px;
+  margin-right: 19%;
+}
+
+.topnav a:hover {
+  color: #6200ff;
+  text-underline-offset: 29px;
+}
+
+.topnav a::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #9000ff;
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+
+.topnav a:hover::before {
+  transform: scaleX(1);
+}
+
+.topnav a.active {
+  color: #ffffff;
+  background: linear-gradient(to bottom, #000000 0%, #303030 100%);
+}
+
+.topnav .icon {
+  display: none;
+}
+
+.logoimg:hover {
+  opacity: 0.7;
+}
+
+.OOFMotorsportsSponsor img:hover {
+    opacity: 0.6;
+    border: 1px solid #7300ff;
+}
+
+
+
+.column {
+    display: none; /* Hide all elements by default */
+}
+
+.show {
+            display: block;
+        }
+
+@media screen and (max-width: 599px) {
+     /*Mobile*/
+     .topnav {
+  position: relative;
+  margin-top: 0%;
+ }
+
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+    font-size: 22px;
+  }
+
+  
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .logoimg {
+  display: inline-block;
+  width: 62%;
+  margin-top: 10px;
+  float: left;
+  margin-left: 2%;
+  max-width: 200px;
+}
+
+.OOFMotorsportsSponsor {
+  max-width: 90%;
+  margin-left: 5%;
+  padding-top: 12px;
+  margin-bottom: 20px;
+ }
+
+ .columnleagueimg img {
+    width: 48%;
+    margin: 3px 1%;
+}
+
+.mainleaguetext {
+    color: white;
+  font-size: 23px;
+  text-align: center;
+  text-decoration: underline red;
+  text-underline-offset: 3px;
+  margin-top: 1%;
+  padding-left: 2.2%;
+}
+
+.btn {
+            border: none;
+            outline: none;
+            padding: 8px 12px;
+            background-color: white;
+            cursor: pointer;
+            font-weight: 550;
+            font-size: medium;
+            transition: .2s ease-in-out;
+        }
+
+        .btn:hover {
+            background-color: #b93fff;
+            color: white;
+            transition: .2s ease-in-out;
+        }
+
+        .btn.active {
+            background-color: #8000ff;
+            color: white;
+        }
+
+ .myButtoncontainer {
+    margin-left: 14.8%;
+    margin-top: -1.5%;
+    margin-bottom: 1.5%;
+ }
+
+ .columnleagueimg {
+    display: flex;
+    width: 90%; 
+    margin: 0 auto; 
+    flex-wrap: wrap;
+    padding-left: -120%;
+}
+
+.columnleagueimg img {
+    width: 49%;
+    margin: 1px 0.4%;
+}
+
+.columnleagueimg img:hover {
+    opacity: 0.6;
+
+}
+
+}
+
+@media screen and (min-width: 600px) and (max-width: 1399px) {
+  /*Tablet*/
+  .topnav {
+  position: relative;
+  margin-top: 0%;
+ }
+
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+    font-size: 22px;
+  }
+
+  
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .logoimg {
+  display: inline-block;
+  width: 62%;
+  margin-top: 10px;
+  float: left;
+  margin-left: 2%;
+  max-width: 200px;
+}
+
+.OOFMotorsportsSponsor {
+  max-width: 90%;
+  margin-left: 5%;
+  padding-top: 12px;
+  margin-bottom: 20px;
+ }
+
+ .columnleagueimg img {
+    width: 48%;
+    margin: 3px 1%;
+}
+
+.mainleaguetext {
+    color: white;
+  font-size: 23px;
+  text-align: center;
+  text-decoration: underline red;
+  text-underline-offset: 3px;
+  margin-top: 1%;
+  padding-left: 2.2%;
+}
+
+.btn {
+            border: none;
+            outline: none;
+            padding: 8px 12px;
+            background-color: white;
+            cursor: pointer;
+            font-weight: 550;
+            font-size: medium;
+            transition: .2s ease-in-out;
+        }
+
+        .btn:hover {
+            background-color: #b93fff;
+            color: white;
+            transition: .2s ease-in-out;
+        }
+
+        .btn.active {
+            background-color: #8000ff;
+            color: white;
+        }
+
+ .myButtoncontainer {
+    margin-left: 35.8%;
+    margin-top: -.5%%;
+    margin-bottom: 1.5%;
+ }
+
+ .columnleagueimg {
+    display: flex;
+    width: 90%; 
+    margin: 0 auto; 
+    flex-wrap: wrap;
+    padding-left: -120%;
+}
+
+.columnleagueimg img {
+    width: 32%;
+    margin: 3px 0.4%;
+}
+
+.columnleagueimg img:hover {
+    opacity: 0.6;
+
+}
+}
+
+@media screen and (min-width: 1400px) {
+    /*PC*/
+ .OOFMotorsportsSponsor {
+  width: 70%;
+  margin-left: 14.5%;
+  margin-right: auto;
+  padding-top: 120px;
+  margin-bottom: 20px;
+ }
+
+ .mainleaguetext {
+    color: white;
+  font-size: 34px;
+  text-align: center;
+  padding-left: 3%;
+  text-decoration: underline red;
+  text-underline-offset: 3px;
+  padding-top: -20%;
+  padding-bottom: 1%;
+ }
+ .btn {
+            border: none;
+            outline: none;
+            padding: 13px 16px;
+            background-color: white;
+            cursor: pointer;
+            font-weight: 550;
+            font-size: medium;
+            transition: .2s ease-in-out;
+        }
+
+        .btn:hover {
+            background-color: #b93fff;
+            color: white;
+            transition: .2s ease-in-out;
+        }
+
+        .btn.active {
+            background-color: #8000ff;
+            color: white;
+        }
+
+ .myButtoncontainer {
+    margin-left: 44.5%;
+    margin-top: -1.5%;
+    margin-bottom: 1.5%;
+ }
+
+ .columnleagueimg {
+    display: flex;
+    width: 80%; 
+    margin: 0 auto; 
+    flex-wrap: wrap;
+    padding-left: 6%;
+}
+
+.columnleagueimg img {
+    width: 22%;
+    margin: 6px 0.4%;
+}
+
+.columnleagueimg img:hover {
+    opacity: 0.6;
+
+}
+}
+
+.imagehovereffect img:hover {
+  -webkit-transform: scale(1.02);
+	transform: scale(1.02);
+  opacity: 0.6;
+}
+
+.imagehovereffect img {
+  -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .2s ease-in-out;
+	transition: .2s ease-in-out;
+}
+
+
+</style>
+<body>
+    <div class="topnav" id="myTopnav">
+        <img src="Images/Logo.png" class="logoimg" onclick="window.location.href = 'home';" style="cursor: pointer;">
+        <a href="home"><i class="fa fa-home"></i><span> Home</span></a>
+        <a href="leagues"><i class="fa fa-trophy"></i><span> Leagues</span></a>
+        <a href="tv"><i class="fa fa-television"></i><span> TV</span></a>
+        <a href="RRC25"><i class="fa fa-trophy"></i><span> RRC25</span></a>
+        <a href="https://discord.gg/Z49TUtFE9M" target="_blank"><i class="fa-brands fa-discord"></i><span> Discord</span></a>
+        <a href="javascript:void(0);" class="icon" onclick="topnav()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+
+      <div class="imagehovereffect"><img src="Images/FOSponsor/OOFMotorsportsSponsor.png" onclick="window.open('https://roracing.com/oofmotorsports', '_blank')" style="cursor: pointer;" class="OOFMotorsportsSponsor"></div>
+
+      <h1 class="mainleaguetext">RoRacing.com Leagues</h1>
+
+      <div id="myBtnContainer" class="myButtoncontainer">
+        <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+        <button class="btn" onclick="filterSelection('games')"> Project Apex</button>
+        <button class="btn" onclick="filterSelection('leagues')"> Custom</button>
+      </div>
+
+
+      <div class="columnleagueimg imagehovereffect">
+        <img data-src="ToJoin.png" onclick="window.open('https://discord.gg/Z49TUtFE9M', '_blank')" style="cursor: pointer;" class="lazy column games">
+        <img data-src="Images/LeagueImages/PARC.webp" onclick="window.open('https://discord.gg/Z49TUtFE9M', '_blank')" style="cursor: pointer;" class="lazy column creators">
+        <img data-src="Images/LeagueImages/Frame.png" onclick="window.open('https://discord.gg/Z49TUtFE9M', '_blank')" style="cursor: pointer;" class="lazy column creators">
+        <img data-src="Images/LeagueImages/Frame 487 (4).png" onclick="window.open('https://discord.gg/Z49TUtFE9M', '_blank')" style="cursor: pointer;" class="lazy column creators">
+
+
+      </div>
+    </div>
+</body>
+
+
+
+<script>
+
+///
+
+function topnav() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+    document.querySelector(".logoimg").style.display = "none";
+  } else {
+    x.className = "topnav";
+    document.querySelector(".logoimg").style.display = "block";
+  }
+}
+
+///
+
+$(function() {
+        $('.lazy').lazy();
+    });
+
+///
+
+filterSelection("all");
+
+function filterSelection(c) {
+    var x, i;
+    x = document.getElementsByClassName("column");
+    if (c === "all") c = "";
+    for (i = 0; i < x.length; i++) {
+        w3RemoveClass(x[i], "show");
+        if (x[i].className.indexOf(c) > -1) {
+            w3AddClass(x[i], "show");
+            // Load the image by setting the src attribute
+            if (!x[i].src) {
+                x[i].src = x[i].getAttribute('data-src');
+            }
+        }
+    }
+}
+
+function w3AddClass(element, name) {
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+        if (arr1.indexOf(arr2[i]) === -1) {
+            element.className += " " + arr2[i];
+        }
+    }
+}
+
+function w3RemoveClass(element, name) {
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+        while (arr1.indexOf(arr2[i]) > -1) {
+            arr1.splice(arr1.indexOf(arr2[i]), 1);
+        }
+    }
+    element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function () {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+    });
+}
+
+///
+
+// Function to shuffle an array
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
+  // Function to randomize the order of leagues inside each container
+  function randomizeLeagues() {
+    const containers = document.querySelectorAll('.columnleagueimg');
+
+    containers.forEach(container => {
+      const leagues = container.querySelectorAll('img');
+      const leagueArray = Array.from(leagues);
+      const shuffledLeagues = shuffle(leagueArray);
+
+      // Remove existing leagues from the container
+      leagueArray.forEach(league => container.removeChild(league));
+
+      // Append the shuffled leagues back to the container in the new order
+      shuffledLeagues.forEach(league => container.appendChild(league));
+    });
+  }
+
+  // Call the randomizeLeagues function when the page loads
+  window.addEventListener('load', randomizeLeagues);
+
+
+</script>
+
+
+</html>
