@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="topnav.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<style>
+
+@media only screen and (max-width: 599px) { 
+     /*Mobile*/
+     .findyourownwaytext {
+        font-size: 21px;
+     }
+
+     .landingpagepicture {
+   width: 120%;
+   overflow: hidden;
+   margin-left: -11%;
+   margin-top: -3.2%;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1399px) {
+  /*Tablet*/
+  .findyourownwaytext {
+        font-size: 26px;
+     }
+    
+     .landingpagepicture {
+   width: 120%;
+   margin-left: -11%;
+   overflow: hidden;
+   margin-top: -3.2%;
+  }
+
+}
+
+@media only screen and (min-width: 1400px) {
+    /*PC*/
+    .landingpagepicture {
+   width: 77%;
+   margin-top: 3%;
+   margin-left: 11%;
+  }
+
+}
+
+.findyourownwaytext {
+    text-decoration-line: underline;
+  -webkit-text-decoration-line: underline;
+  text-decoration-color: red;
+  -webkit-text-decoration-color: red;
+  text-underline-offset: 3px;
+  color: white;
+
+}
+
+.landingpagepicturecontainer {
+    overflow: hidden;
+}
+
+</style>
+<body>
+    <div class="topnav" id="myTopnav">
+        <img src="Images/Logo.png" class="logoimg" onclick="window.location.href = 'home';" style="cursor: pointer;">
+        <a href="home"><i class="fa fa-home"></i><span> Home</span></a>
+        <a href="leagues"><i class="fa fa-trophy"></i><span> Leagues</span></a>
+        <a href="tv"><i class="fa fa-television"></i><span> TV</span></a>
+        <a href="rrc25"><i class="fa fa-trophy"></i><span> RRC25</span></a>
+        <a href="https://discord.gg/Z49TUtFE9M" target="_blank"><i class="fa-brands fa-discord"></i><span> Discord</span></a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+
+
+       <div class="landingpagepicturecontainer">
+      <img src="WelcomeIMG.webp" class="landingpagepicture">
+     </div>
+
+      <center>
+      <h1 class="findyourownwaytext">Find Your Own Way.</h1>
+      </center>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+    document.querySelector(".logoimg").style.display = "none";
+  } else {
+    x.className = "topnav";
+    document.querySelector(".logoimg").style.display = "block";
+  }
+}
+</script>
+</html>
