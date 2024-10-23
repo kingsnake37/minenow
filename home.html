@@ -1,115 +1,178 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Home</title>
-<link rel="icon" href="Images/favicon.png" type="image/png">
-<link rel="shortcut icon" href="Images/favicon.png" type="image/png">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q9VMH52ZHE"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-Q9VMH52ZHE');
-</script>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="topnav.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
 <style>
 
-  
+@media only screen and (max-width: 599px) { 
+     /*Mobile*/
+     .findyourownwaytext {
+        font-size: 21px;
+     }
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #151515;
+     .landingpagepicture {
+   width: 120%;
+   overflow: hidden;
+   margin-left: -11%;
+   margin-top: -3.2%;
+  }
+
+  .findyourownwayimagesPC img {
+display: none;
 }
 
-.topnav {
-  overflow: hidden;
-  background-color: rgb(9, 9, 9);
-  z-index: 100;
-  width: 100%;
-  position: fixed;
-  text-align: center; /* Center align the text */
-  margin-top: -2.1%;
-}
-
-.topnav a {
-  display: inline-block;
-  color: #ffffff;
-  padding: 24px 30px;
-  text-decoration: none;
-  font-size: 25px;
-  font-weight: 500;
-  position: relative;
-  text-decoration: none;
-}
-
-.logoimg {
-  display: inline-block;
-  margin-bottom: -27px;
-  width: 260px;
-  margin-right: 19%;
-}
-
-.mainwidth{
+.findyourownwayimagesmobile img {
   width: 80%;
-  margin-left: 9%;
+  margin: -0px -0%;
+  -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+  padding: 0px 0px;
 }
 
-.topnav a:hover {
-  color: #6200ff;
-  text-underline-offset: 29px;
+.findyourownwayimagesmobile {
+  overflow: auto;
+  white-space: nowrap;
+  display: flex;
 }
 
-.topnav a::before {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #9000ff;
-  transform: scaleX(0);
-  transition: transform 0.2s ease;
-}
-
-.topnav a:hover::before {
-  transform: scaleX(1);
-}
-
-.topnav a.active {
-  color: #ffffff;
-  background: linear-gradient(to bottom, #000000 0%, #303030 100%);
-}
-
-.topnav .icon {
-  display: none;
-}
-
-.logoimg:hover {
-  opacity: 0.7;
-}
-
-    @media screen and (min-width: 1800px) {
-      
-      
-
-.findyourownwaytext {
+.findyourownwayimagesmobile a {
+  display: inline-block;
   color: white;
-  font-size: 29px;
   text-align: center;
-  padding-left: 8%;
-  text-decoration: underline red;
-  text-underline-offset: 3px;
-  padding-top: 2%;
-  padding-bottom: 1%;
+  text-decoration: none;
 }
 
-.findyourownwayimages img {
-  width: 30%;
+.findyourownwayimagesmobile a:hover {
+  background-color: #777;
+}
+
+.watchcontentcontainer img {
+  width: 90%;
+  -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+  margin-left: 5%;
+}
+
+.watchcontentcontainer img:hover {
+  -webkit-transform: scale(1.08);
+	transform: scale(1.08);
+  opacity: 0.6;
+}
+
+.watchcontentcontainer {
+  overflow: hidden;
+}
+
+hr {
+  margin-top: 10%;
+}
+
+footer img {
+    margin-left: 7%;
+    width: 40%;
+    padding-top: 1%;
+  }
+
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1399px) {
+  /*Tablet*/
+  .findyourownwaytext {
+        font-size: 26px;
+     }
+    
+     .landingpagepicture {
+   width: 120%;
+   margin-left: -11%;
+   overflow: hidden;
+   margin-top: -3.2%;
+  }
+
+  .findyourownwayimagesPC img {
+display: none;
+}
+
+.findyourownwayimagesmobile img {
+  width: 60%;
+  margin: -0px -0%;
+  -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+  padding: 0px 0px;
+}
+
+.findyourownwayimagesmobile {
+  overflow: auto;
+  white-space: nowrap;
+  display: flex;
+}
+
+.findyourownwayimagesmobile a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+.findyourownwayimagesmobile a:hover {
+  background-color: #777;
+}
+
+.watchcontentcontainer img {
+  width: 90%;
+  -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+  margin-left: 5%;
+}
+
+.watchcontentcontainer img:hover {
+  -webkit-transform: scale(1.08);
+	transform: scale(1.08);
+  opacity: 0.6;
+}
+
+.watchcontentcontainer {
+  overflow: hidden;
+}
+
+hr {
+  margin-top: 10%;
+}
+
+footer img {
+    margin-left: 7%;
+    width: 40%;
+    padding-top: 1%;
+  }
+
+}
+
+@media only screen and (min-width: 1400px) {
+    /*PC*/
+    .landingpagepicture {
+   width: 77%;
+   margin-top: 3%;
+   margin-left: 11%;
+  }
+
+  .findyourownwaytext {
+    margin-bottom: 2%;
+  }
+
+  .findyourownwayimagesPC img {
+  width: 27%;
   margin: -25px -0%;
   -webkit-transform: scale(1);
 	transform: scale(1);
@@ -117,7 +180,7 @@ body {
 	transition: .3s ease-in-out;
 }
 
-.findyourownwayimages {
+.findyourownwayimagesPC {
   padding-bottom: 3%;
 }
 
@@ -126,231 +189,141 @@ body {
   margin-right: 7%;
 }
 
-.watchf1text {
-  color: white;
-  font-size: 29px;
-  text-align: center;
-  text-decoration: underline rgb(0, 162, 255);
-  text-underline-offset: 3px;
-  padding-top: 2%;
-  margin-bottom: -0.5%;
+.findyourownwayimagesmobile {
+  display: none;
 }
 
-.f1streamimg {
-  width: 60%;
-  margin-left: 20.5%;
-  padding-bottom: 0%;
-}
-
-.JoinTheDiscordImg {
-  width: 50%;
-  margin-left: 25%;
-  margin-top: 3%;
-  padding-bottom: 3%;
-}
-
-.pagecontent {
-  margin-top: 2%;
-}
-
-    }
-
-
-
-
-
-    
-    @media screen and (max-width: 1799px) { 
-
-      .topnav {
-  position: relative;
-  margin-top: 0%;
- }
-
-  .topnav a:not(:first-child) {display: none;}
-  .topnav a.icon {
-    float: right;
-    display: block;
-    font-size: 22px;
-  }
-
-  
-  .topnav.responsive {position: relative;}
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-
-  .logoimg {
-  display: inline-block;
-  width: 62%;
-  margin-top: 10px;
-  float: left;
-  margin-left: 2%;
-  max-width: 200px;
-}
-
-.findyourownwaytext {
-  color: white;
-  font-size: 17px;
-  text-align: center;
-  text-decoration: underline red;
-  text-underline-offset: 3px;
-  margin-top: 8%;
-  padding-left: 10%;
-}
-
-.findyourownwayimages img {
-  width: 30%;
-  margin: 3px 1%;
-  -webkit-transform: scale(1);
-	transform: scale(1);
-	-webkit-transition: .3s ease-in-out;
-	transition: .3s ease-in-out;
-}
-
-.findyourownwaysection {
-  margin-left: -10%;
-}
-
-.watchf1text {
-  color: white;
-  font-size: 17px;
-  text-align: center;
-  text-decoration: underline rgb(0, 162, 255);
-  text-underline-offset: 3px;
-  margin-top: 8%;
-  padding-left: -3.5%;
-}
-
-.f1streamimg {
-  width: 85%;
-  margin-left: 8%;
-  padding-bottom: 3%;
-}
-
-.JoinTheDiscordImg {
-  width: 90%;
-  margin-left: 7%;
-}
-
-}
-
-.landingpagepicture {
-   margin-left: 10%;
-   width: 80%;
-   margin-top: 1%;
-  }
-
-  .findyourownwayimages {
+.findyourownwayimagesPC {
 display: flex;
 margin-left: 16%;
 flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
   }
 
-.findyourownwayimages img:hover {
+.findyourownwayimagesPC img:hover {
   -webkit-transform: scale(1.08);
 	transform: scale(1.08);
   opacity: 0.6;
 }
 
-.f1streamsection img {
+.watchcontentcontainer img {
+  width: 60%;
+  -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+  margin-left: 18%;
+}
+
+.watchcontentcontainer img:hover {
+  -webkit-transform: scale(1.08);
+	transform: scale(1.08);
+  opacity: 0.6;
+}
+
+footer img {
+    margin-left: 5.5%;
+    padding-left: 11%;
+    padding-top: 1%;
+    width: 25%;
+  }
+
+
+}
+
+.findyourownwaytext {
+    text-decoration-line: underline;
+  -webkit-text-decoration-line: underline;
+  text-decoration-color: red;
+  -webkit-text-decoration-color: red;
+  text-underline-offset: 3px;
+  color: white;
+
+}
+
+.landingpagepicturecontainer {
+    overflow: hidden;
+}
+
+h1 {
+   margin-top: 3%;
+}
+
+footer {
+    margin-top: 5%;
+  }
+
+.imagehovereffect img {
   -webkit-transform: scale(1);
 	transform: scale(1);
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
 }
 
-hr {
-  width: 70%;
-  text-align: center;
-}
-
-.pagecontent {
-  width: 93%;
-  margin-left: 3%;
-}
-
-.f1streamsection img:hover {
+.imagehovereffect img:hover {
   -webkit-transform: scale(1.08);
 	transform: scale(1.08);
   opacity: 0.6;
 }
-
-.JoinTheDiscordIMG img:hover {
-  -webkit-transform: scale(1.08);
-	transform: scale(1.08);
-  opacity: 0.6;
-}
-
-.JoinTheDiscordIMG img {
-  -webkit-transform: scale(1);
-	transform: scale(1);
-	-webkit-transition: .3s ease-in-out;
-	transition: .3s ease-in-out;
-}
-
 
 
 </style>
-</head>
 <body>
-  <div class="topnav" id="myTopnav">
-    <img src="Images/Logo.png" class="logoimg" onclick="window.location.href = 'home';" style="cursor: pointer;">
-    <a href="home"><i class="fa fa-home"></i><span> Home</span></a>
-    <a href="leagues"><i class="fa fa-trophy"></i><span> Leagues</span></a>
-    <a href="tv"><i class="fa fa-television"></i><span> TV</span></a>
-    <a href="rrc25"><i class="fa fa-trophy"></i><span> RRC25</span></a>
-    <a href="https://discord.gg/Z49TUtFE9M" target="_blank"><i class="fa-brands fa-discord"></i><span> Discord</span></a>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
-    </a>
-  </div>
-
-      <div class="pagecontent">
+    <div class="topnav" id="myTopnav">
+        <img src="Images/Logo.png" class="logoimg" onclick="window.location.href = 'home';" style="cursor: pointer;">
+        <a href="home"><i class="fa fa-home"></i><span> Home</span></a>
+        <a href="leagues"><i class="fa fa-trophy"></i><span> Leagues</span></a>
+        <a href="tv"><i class="fa fa-television"></i><span> TV</span></a>
+        <a href="rrc25"><i class="fa fa-trophy"></i><span> RRC25</span></a>
+        <a href="https://discord.gg/Z49TUtFE9M" target="_blank"><i class="fa-brands fa-discord"></i><span> Discord</span></a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
 
 
-<img src="WelcomeIMG.webp" class="landingpagepicture">
+       <div class="landingpagepicturecontainer">
+      <img src="WelcomeIMG.webp" class="landingpagepicture">
+     </div>
+
+      <center>
+      <h1 class="findyourownwaytext">Find Your Own Way.</h1>
+      </center>
 
 
 
-<div class="findyourownwaysection">
-<h1 class="findyourownwaytext">Find Your Own Way.</h1>
+      <div class="findyourownwayimagesPC">
+        <img src="LeaguesIMG.webp" onclick="window.open('https://roracing.com/leagues', '_blank')" style="cursor: pointer;">
+        <img src="TVIMG.webp" onclick="window.open('https://roracing.com/tv', '_blank')" style="cursor: pointer;">
+        <img src="RRC25IMG.webp" onclick="window.open('https://roracing.com/rrc25', '_blank')" style="cursor: pointer;">
+      </div>
+      </div>
 
-<div class="findyourownwayimages">
-  <img src="LeaguesIMG.webp" onclick="window.open('https://roracing.com/leagues', '_blank')" style="cursor: pointer;">
-  <img src="TVIMG.webp" onclick="window.open('https://roracing.com/tv', '_blank')" style="cursor: pointer;">
-  <img src="RRC25IMG.webp" onclick="window.open('https://roracing.com/rrc25', '_blank')" style="cursor: pointer;">
-</div>
-</div>
+      <div class="findyourownwayimagesmobile">
+        <img src="LeaguesIMG.webp" onclick="window.open('https://roracing.com/leagues', '_blank')" style="cursor: pointer;">
+        <img src="TVIMG.webp" onclick="window.open('https://roracing.com/tv', '_blank')" style="cursor: pointer;">
+        <img src="RRC25IMG.webp" onclick="window.open('https://roracing.com/rrc25', '_blank')" style="cursor: pointer;">
+      </div>
+      </div>
 
 <hr>
 
-</div>
+        <center>
+        <h1 class="findyourownwaytext">Watch Content On RoRacing.com</h1>
+        </center>
 
-<div class="f1streamsection">
-<h1 class="watchf1text">Watch Content On RoRacing.com</h1>
-<img src="WatchContent.webp" class="f1streamimg" onclick="window.open('https://roracing.com/tv', '_blank')" style="cursor: pointer;">
-</div>
-<hr>
-<div class="JoinTheDiscordIMG">
-<img src="Images/JoinTheDiscord.png" class="JoinTheDiscordImg" onclick="window.open('https://discord.gg/8hGDfswKVR', '_blank')" style="cursor: pointer;">
-</div>
+        <div class="watchcontentcontainer">
+          <img src="WatchContent.webp" onclick="window.open('https://roracing.com/tv', '_blank')" style="cursor: pointer;">
+          </div>
 
+          <hr>
 
-
-
-
-
-
-
-
+          <footer class="imagehovereffect">
+            <center>
+            <h1 class="findyourownwaytext">Proud Sponsors</h1>
+            </center>
+            <img src="RRCPartners/Frame 484.png" onclick="window.open('https://www.roblox.com/catalog?Category=1&CreatorName=inv+works&CreatorType=Group&salesTypeFilter=1', '_blank')" style="cursor: pointer;">
+            <img src="RRCPartners/Frame 485.png" onclick="window.open('https://discord.gg/WPmKuYw32q', '_blank')" style="cursor: pointer;">
+          </footer>
 
 
 
@@ -358,7 +331,12 @@ hr {
 
 
 
-    </div>
+
+
+
+
+</body>
+
 
 <script>
 function myFunction() {
@@ -371,15 +349,5 @@ function myFunction() {
     document.querySelector(".logoimg").style.display = "block";
   }
 }
-
-
-document.querySelectorAll('[type="color"]').forEach(($input) => {
-  $input.addEventListener("change", (e) => {
-    document
-      .querySelector(".scroller")
-      .style.setProperty(`--${$input.getAttribute("id")}`, $input.value);
-  });
-});
 </script>
-</body>
 </html>
