@@ -633,32 +633,33 @@ function shuffle(array) {
 
   ///
 
-// Wait for the page to fully load
-window.addEventListener('load', function() {
-    // Get the URL hash (after the # symbol)
-    const league = window.location.hash.substring(1);  // Get the part after '#'
+  window.addEventListener('load', function() {
+    // Extract the part after the # in the URL (e.g., "ExampleLeague")
+    const league = window.location.hash.substring(1);  
 
     if (league) {
-        // Find the search input field (modify selector based on your page structure)
+        // Find the search input element by its selector (update as necessary for your page)
         const searchInput = document.querySelector('input[type="search"], input.search-bar');
 
         if (searchInput) {
-            // Populate the search input with the league name from the URL hash
+            // Set the value of the search input to the league name from the URL
             searchInput.value = league;
 
-            // Optionally, trigger a search (simulating the user typing)
-            // You can simulate an input event to trigger the search behavior
-            const event = new Event('input', { bubbles: true });
-            searchInput.dispatchEvent(event);
+            // Simulate the 'input' event so the website knows the search bar was updated
+            const inputEvent = new Event('input', { bubbles: true });
+            searchInput.dispatchEvent(inputEvent);
 
-            // If the search form needs to be submitted, you can trigger the form submission as well
-            const searchForm = searchInput.form;  // Get the parent form if necessary
+            // If the search field triggers a form submission, we simulate the form submission
+            const searchForm = searchInput.closest('form');  // Find the closest form if applicable
             if (searchForm) {
-                searchForm.submit();  // Submit the form if required
+                searchForm.submit();  // Submit the form
             }
+        } else {
+            console.error('Search input not found!');
         }
     }
 });
+
 
 
 
