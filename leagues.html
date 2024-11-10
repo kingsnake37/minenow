@@ -630,6 +630,26 @@ function shuffle(array) {
   // Call the randomizeLeagues function when the page loads
   window.addEventListener('load', randomizeLeagues);
 
+  ///
+
+  document.addEventListener("DOMContentLoaded", function() {
+    // Check if there's a hash in the URL (e.g., #ExampleLeague)
+    const hash = window.location.hash;
+
+    // If a hash is present, proceed
+    if (hash) {
+        const leagueName = hash.substring(1); // Remove the '#' character
+        const searchInput = document.getElementById("leagueSearch"); // Adjust this selector if necessary
+
+        if (searchInput) {
+            // Set the search bar value to the hash text
+            searchInput.value = leagueName;
+
+            // Call the search function
+            searchLeagues();
+        }
+    }
+});
 
 </script>
 
