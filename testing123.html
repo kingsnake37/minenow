@@ -537,19 +537,19 @@ $(function() {
 ///
 
 function searchLeagues() {
-            const searchInput = document.getElementById("leagueSearch").value.toLowerCase();
-            const leagues = document.getElementsByClassName("columnleagueimg")[0].getElementsByTagName("img");
+    const searchInput = document.getElementById("searchBar").value.toLowerCase();
+    const leagues = document.getElementsByClassName("columnleagueimg")[0].getElementsByTagName("img");
 
-            for (let i = 0; i < leagues.length; i++) {
-                const league = leagues[i];
-                const leagueName = league.id.toLowerCase();
-                if (leagueName.includes(searchInput)) {
-                    league.style.display = "block";
-                } else {
-                    league.style.display = "none";
-                }
-            }
+    for (let i = 0; i < leagues.length; i++) {
+        const league = leagues[i];
+        const leagueName = league.id.toLowerCase();
+        if (leagueName.includes(searchInput)) {
+            league.style.display = "block";
+        } else {
+            league.style.display = "none";
         }
+    }
+}
 
  //
 
