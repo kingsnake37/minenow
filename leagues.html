@@ -633,24 +633,26 @@ function shuffle(array) {
 
   ///
 
-  document.addEventListener("DOMContentLoaded", function() {
-    // Check if there's a hash in the URL (e.g., #ExampleLeague)
-    const hash = window.location.hash;
+// Get the fragment identifier from the URL (everything after #)
+let fragment = window.location.hash.substring(1);
 
-    // If a hash is present, proceed
-    if (hash) {
-        const leagueName = hash.substring(1); // Remove the '#' character
-        const searchInput = document.querySelector("leagueSearch"); // Adjust this selector to match your search bar element
+// Check if the fragment exists and if the search bar is available on the page
+if (fragment) {
+    // Get the search input element (you might need to change this selector to match your website)
+    let searchInput = document.querySelector("input[type='search'], input[name='q'], input[name='search']");
 
-        if (searchInput) {
-            // Set the search bar value to the hash text
-            searchInput.value = leagueName;
+    if (searchInput) {
+        // Set the search input value to the fragment
+        searchInput.value = fragment;
 
-            // Simulate pressing 'Enter' on the input to trigger the search
-            searchInput.dispatchEvent(new KeyboardEvent("keydown", { key: "Enter", bubbles: true }));
+        // Optionally, trigger a search if needed (this depends on the website's behavior)
+        let searchForm = searchInput.form;
+        if (searchForm) {
+            searchForm.submit(); // or searchInput.dispatchEvent(new Event('input'));
         }
     }
-});
+}
+
 
 </script>
 
