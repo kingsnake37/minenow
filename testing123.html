@@ -517,6 +517,7 @@ body {
 
 ///
 
+// Function to toggle the top navigation menu in mobile view
 function topnav() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
@@ -528,34 +529,15 @@ function topnav() {
   }
 }
 
-///
-
+// Lazy loading initialization for images
 $(function() {
-        $('.lazy').lazy();
-    });
-
-///
-
-function searchLeagues() {
-    const searchInput = document.getElementById("searchBar").value.toLowerCase();
-    const leagues = document.getElementsByClassName("columnleagueimg")[0].getElementsByTagName("img");
-
-    for (let i = 0; i < leagues.length; i++) {
-        const league = leagues[i];
-        const leagueName = league.id.toLowerCase();
-        if (leagueName.includes(searchInput)) {
-            league.style.display = "block";
-        } else {
-            league.style.display = "none";
-        }
-    }
-}
-
- //
+  $('.lazy').lazy();
+});
 
 // Global variable to store the active filter
 let activeFilter = "all";
 
+// Function to search leagues by name
 function searchLeagues() {
     const searchInput = document.getElementById("leagueSearch").value.toLowerCase();
     const leagues = document.querySelectorAll(".columnleagueimg img");
@@ -573,6 +555,7 @@ function searchLeagues() {
     });
 }
 
+// Function to filter leagues based on categories
 function filterSelection(category) {
     activeFilter = category; // Update active filter
     const searchInput = document.getElementById("leagueSearch").value.toLowerCase();
@@ -599,57 +582,34 @@ function filterSelection(category) {
     document.querySelector(`button[onclick="filterSelection('${category}')"]`).classList.add("active");
 }
 
-///
-
-// Function to shuffle an array
+// Function to shuffle an array (useful for randomizing league order)
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // Swap elements
     }
     return array;
-  }
+}
 
-  // Function to randomize the order of leagues inside each container
-  function randomizeLeagues() {
+// Function to randomize the order of leagues inside each container
+function randomizeLeagues() {
     const containers = document.querySelectorAll('.columnleagueimg');
 
     containers.forEach(container => {
-      const leagues = container.querySelectorAll('img');
-      const leagueArray = Array.from(leagues);
-      const shuffledLeagues = shuffle(leagueArray);
+        const leagues = container.querySelectorAll('img');
+        const leagueArray = Array.from(leagues);
+        const randomizedArray = shuffle(leagueArray);
 
-      // Remove existing leagues from the container
-      leagueArray.forEach(league => container.removeChild(league));
+        // Remove existing images
+        container.innerHTML = '';
 
-      // Append the shuffled leagues back to the container in the new order
-      shuffledLeagues.forEach(league => container.appendChild(league));
+        // Append the randomized images back to the container
+        randomizedArray.forEach(league => {
+            container.appendChild(league);
+        });
     });
-  }
+}
 
-  // Call the randomizeLeagues function when the page loads
-  window.addEventListener('load', randomizeLeagues);
-
-  ///
-
-  document.addEventListener("DOMContentLoaded", function() {
-    // Check if there's a hash in the URL (e.g., #ExampleLeague)
-    const hash = window.location.hash;
-
-    // If a hash is present, proceed
-    if (hash) {
-        const leagueName = hash.substring(1); // Remove the '#' character
-        const searchInput = document.querySelector("leagueSearch"); // Adjust this selector to match your search bar element
-
-        if (searchInput) {
-            // Set the search bar value to the hash text
-            searchInput.value = leagueName;
-
-            // Call the search function directly to trigger the search
-            searchLeagues();
-        }
-    }
-});
 
 
 </script>
