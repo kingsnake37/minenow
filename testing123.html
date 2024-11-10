@@ -672,7 +672,21 @@ document.addEventListener("DOMContentLoaded", function() {
             searchLeagues(urlFragment);
         }
     });
+
+    // 4. Function to delay the re-run of the search by 2 seconds
+    function delayedSearch() {
+        setTimeout(function() {
+            searchLeagues(searchInputElement.value.toLowerCase());
+        }, 2000); // 2-second delay
+    }
+
+    // 5. Attach event listener for search input with delay
+    searchInputElement.addEventListener("input", function() {
+        delayedSearch(); // Call the delayed search function instead of immediate search
+    });
+
 });
+
 
 
 
