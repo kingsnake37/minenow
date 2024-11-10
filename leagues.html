@@ -632,10 +632,8 @@ function shuffle(array) {
 
 ///
 
-// Run this script when the page is loaded
 window.onload = function() {
-    // Get the fragment identifier (after #) from the URL
-    const fragment = window.location.hash.substring(1);  // removes the '#' symbol
+    const fragment = window.location.hash.substring(1); // Get the fragment identifier (after #)
 
     if (fragment) {
         // Find the search bar (replace with the correct ID or class of your search input)
@@ -645,11 +643,18 @@ window.onload = function() {
             // Set the value of the search bar to the fragment identifier
             searchBar.value = fragment;
 
-            // Trigger the input event to simulate typing
-            searchBar.dispatchEvent(new Event('input'));
+            // Manually trigger the 'input' event to simulate typing
+            const event = new Event('input', { bubbles: true, cancelable: true });
+            searchBar.dispatchEvent(event);
+
+            // If the search uses a timeout for filtering, we can trigger it manually
+            if (typeof searchBar.oninput === 'function') {
+                searchBar.oninput(); // Manually call the oninput handler if it exists
+            }
         }
     }
 };
+
 
 
 
