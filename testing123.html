@@ -616,22 +616,34 @@ function shuffle(array) {
 ///
 
 document.addEventListener("DOMContentLoaded", function() {
+    // Check if leagueSearch exists
+    const searchInputElement = document.getElementById("leagueSearch");
+
+    if (!searchInputElement) {
+        console.error("No input element found with id 'leagueSearch'");
+        return;
+    }
+
     // 1. Handle URL fragment on page load
     const urlFragment = window.location.hash.substring(1).toLowerCase();
     if (urlFragment) {
-        document.getElementById("leagueSearch").value = urlFragment; // Set search field value to fragment
-        searchLeagues(); // Run the search immediately
+        searchInputElement.value = urlFragment; // Set search field value to fragment
+        searchLeagues(urlFragment); // Run the search immediately
     }
 
     // 2. Attach event listener for search input
-    document.getElementById("leagueSearch").addEventListener("input", function() {
-        searchLeagues();
+    searchInputElement.addEventListener("input", function() {
+        searchLeagues(searchInputElement.value.toLowerCase());
     });
 
     // 3. Function to handle the search
-    function searchLeagues() {
-        const searchInput = document.getElementById("leagueSearch").value.toLowerCase();
+    function searchLeagues(searchInput) {
         const leagues = document.querySelectorAll(".columnleagueimg img");
+
+        if (!leagues.length) {
+            console.error("No league images found with the selector '.columnleagueimg img'");
+            return;
+        }
 
         leagues.forEach(league => {
             const leagueName = league.id.toLowerCase();
@@ -651,7 +663,17 @@ document.addEventListener("DOMContentLoaded", function() {
             window.history.replaceState(null, "", window.location.pathname); // Clear fragment if no search term
         }
     }
+
+    // Optional: Handle hash changes (in case the URL fragment changes directly)
+    window.addEventListener("hashchange", function() {
+        const urlFragment = window.location.hash.substring(1).toLowerCase();
+        if (urlFragment) {
+            searchInputElement.value = urlFragment;
+            searchLeagues(urlFragment);
+        }
+    });
 });
+
 
 
 
