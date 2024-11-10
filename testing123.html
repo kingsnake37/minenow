@@ -471,7 +471,7 @@ body {
       <h1 class="mainleaguetext">RoRacing.com Leagues</h1>
 
       <div class="search-container">
-        <input type="text" id="leagueSearch" placeholder="Search Leagues..." onkeyup="searchLeagues()">
+        <input type="text" id="leagueSearch" placeholder="Search Leagues..." oninput="searchLeagues()">
 
 
       <div id="myBtnContainer" class="myButtoncontainer">
@@ -515,7 +515,8 @@ body {
 
 <script>
 
-// Toggle navigation for mobile view
+///
+
 function topnav() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
@@ -527,33 +528,34 @@ function topnav() {
   }
 }
 
-// Initialize lazy loading for images
+///
+
 $(function() {
-  $('.lazy').lazy();
-});
+        $('.lazy').lazy();
+    });
 
-// Global variable to store active filter
-let activeFilter = "all";
+///
 
-// Function to search leagues by name
+document.getElementById("leagueSearch").addEventListener("input", searchLeagues);
+
 function searchLeagues() {
     const searchInput = document.getElementById("leagueSearch").value.toLowerCase();
-    const leagues = document.querySelectorAll(".columnleagueimg img");
+    const leagues = document.getElementsByClassName("columnleagueimg")[0].getElementsByTagName("img");
 
-    leagues.forEach(league => {
+    for (let i = 0; i < leagues.length; i++) {
+        const league = leagues[i];
         const leagueName = league.id.toLowerCase();
-        const matchesSearch = leagueName.includes(searchInput);
-        const matchesFilter = activeFilter === "all" || league.classList.contains(activeFilter);
-
-        if (matchesSearch && matchesFilter) {
+        if (leagueName.includes(searchInput)) {
             league.style.display = "block";
         } else {
             league.style.display = "none";
         }
-    });
+    }
 }
 
-// Function to filter leagues based on category
+ //
+
+
 function filterSelection(category) {
     activeFilter = category; // Update active filter
     const searchInput = document.getElementById("leagueSearch").value.toLowerCase();
@@ -580,36 +582,81 @@ function filterSelection(category) {
     document.querySelector(`button[onclick="filterSelection('${category}')"]`).classList.add("active");
 }
 
-// Function to shuffle an array (useful for randomizing the league order)
+///
+
+// Function to shuffle an array
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
     }
     return array;
-}
+  }
 
-// Function to randomize the order of leagues inside each container
-function randomizeLeagues() {
+  // Function to randomize the order of leagues inside each container
+  function randomizeLeagues() {
     const containers = document.querySelectorAll('.columnleagueimg');
 
     containers.forEach(container => {
-        const leagues = container.querySelectorAll('img');
-        const leagueArray = Array.from(leagues);
-        const randomizedArray = shuffle(leagueArray);
+      const leagues = container.querySelectorAll('img');
+      const leagueArray = Array.from(leagues);
+      const shuffledLeagues = shuffle(leagueArray);
 
-        // Remove existing images
-        container.innerHTML = '';
+      // Remove existing leagues from the container
+      leagueArray.forEach(league => container.removeChild(league));
 
-        // Append the randomized images back to the container
-        randomizedArray.forEach(league => {
-            container.appendChild(league);
-        });
+      // Append the shuffled leagues back to the container in the new order
+      shuffledLeagues.forEach(league => container.appendChild(league));
     });
-}
+  }
 
-// Event listener for randomizing leagues on page load
-document.addEventListener('DOMContentLoaded', randomizeLeagues);
+  // Call the randomizeLeagues function when the page loads
+  window.addEventListener('load', randomizeLeagues);
+
+///
+
+document.addEventListener("DOMContentLoaded", function() {
+    // 1. Handle URL fragment on page load
+    const urlFragment = window.location.hash.substring(1).toLowerCase();
+    if (urlFragment) {
+        document.getElementById("leagueSearch").value = urlFragment; // Set search field value to fragment
+        searchLeagues(); // Run the search immediately
+    }
+
+    // 2. Attach event listener for search input
+    document.getElementById("leagueSearch").addEventListener("input", function() {
+        searchLeagues();
+    });
+
+    // 3. Function to handle the search
+    function searchLeagues() {
+        const searchInput = document.getElementById("leagueSearch").value.toLowerCase();
+        const leagues = document.querySelectorAll(".columnleagueimg img");
+
+        leagues.forEach(league => {
+            const leagueName = league.id.toLowerCase();
+            const matchesSearch = leagueName.includes(searchInput);
+
+            if (matchesSearch) {
+                league.style.display = "block";
+            } else {
+                league.style.display = "none";
+            }
+        });
+
+        // Update the URL fragment to reflect the current search
+        if (searchInput) {
+            window.location.hash = searchInput; // Update URL fragment
+        } else {
+            window.history.replaceState(null, "", window.location.pathname); // Clear fragment if no search term
+        }
+    }
+});
+
+
+
+
+
 
 
 
