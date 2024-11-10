@@ -643,9 +643,8 @@ window.onload = function() {
             // Set the value of the search bar to the fragment identifier
             searchBar.value = fragment;
 
-            // Simulate the keyup event to trigger the search
-            const event = new Event('keyup');
-            searchBar.dispatchEvent(event);
+            // Trigger the input event to run searchLeagues
+            searchLeagues(); // Directly call searchLeagues to search the leagues
         }
     }
 };
