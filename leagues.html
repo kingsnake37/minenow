@@ -630,36 +630,26 @@ function shuffle(array) {
   // Call the randomizeLeagues function when the page loads
   window.addEventListener('load', randomizeLeagues);
 
+///
 
-  ///
+// Run this script when the page is loaded
+window.onload = function() {
+    // Get the fragment identifier (after #) from the URL
+    const fragment = window.location.hash.substring(1);  // removes the '#' symbol
 
-  window.addEventListener('load', function() {
-    // Extract the part after the # in the URL (e.g., "ExampleLeague")
-    const league = window.location.hash.substring(1);  
+    if (fragment) {
+        // Find the search bar (replace with the correct ID or class of your search input)
+        const searchBar = document.getElementById("leagueSearch");
 
-    if (league) {
-        // Find the search input element by its selector (update as necessary for your page)
-        const searchInput = document.querySelector('input[type="search"], input.search-bar');
+        if (searchBar) {
+            // Set the value of the search bar to the fragment identifier
+            searchBar.value = fragment;
 
-        if (searchInput) {
-            // Set the value of the search input to the league name from the URL
-            searchInput.value = league;
-
-            // Simulate the 'input' event so the website knows the search bar was updated
-            const inputEvent = new Event('input', { bubbles: true });
-            searchInput.dispatchEvent(inputEvent);
-
-            // If the search field triggers a form submission, we simulate the form submission
-            const searchForm = searchInput.closest('form');  // Find the closest form if applicable
-            if (searchForm) {
-                searchForm.submit();  // Submit the form
-            }
-        } else {
-            console.error('Search input not found!');
+            // Trigger the input event to simulate typing
+            searchBar.dispatchEvent(new Event('input'));
         }
     }
-});
-
+};
 
 
 
