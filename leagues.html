@@ -643,19 +643,12 @@ window.onload = function() {
             // Set the value of the search bar to the fragment identifier
             searchBar.value = fragment;
 
-            // Manually trigger the keyup event to call the searchLeagues function
-            const keyUpEvent = new KeyboardEvent('keyup', {
-                key: 'Enter', // This simulates pressing Enter, but you can change it to any key if needed
-                keyCode: 13,
-                code: 'Enter',
-                which: 13,
-                bubbles: true,
-                cancelable: true
-            });
-            searchBar.dispatchEvent(keyUpEvent);
+            // Manually trigger the searchLeagues function directly
+            searchLeagues();
         }
     }
 };
+
 
 
 
