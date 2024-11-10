@@ -644,16 +644,27 @@ window.onload = function() {
             searchBar.value = fragment;
 
             // Manually trigger the 'input' event to simulate typing
-            const event = new Event('input', { bubbles: true, cancelable: true });
-            searchBar.dispatchEvent(event);
+            const inputEvent = new Event('input', { bubbles: true, cancelable: true });
+            searchBar.dispatchEvent(inputEvent);
 
-            // If the search uses a timeout for filtering, we can trigger it manually
-            if (typeof searchBar.oninput === 'function') {
-                searchBar.oninput(); // Manually call the oninput handler if it exists
-            }
+            // Trigger the keyup event if the search listens for it
+            const keyUpEvent = new KeyboardEvent('keyup', {
+                key: 'Enter',
+                keyCode: 13,
+                code: 'Enter',
+                which: 13,
+                bubbles: true,
+                cancelable: true
+            });
+            searchBar.dispatchEvent(keyUpEvent);
+
+            // Trigger the change event if it's listening for that
+            const changeEvent = new Event('change', { bubbles: true, cancelable: true });
+            searchBar.dispatchEvent(changeEvent);
         }
     }
 };
+
 
 
 
