@@ -536,6 +536,8 @@ $(function() {
 
 ///
 
+document.getElementById("leagueSearch").addEventListener("input", searchLeagues);
+
 function searchLeagues() {
     const searchInput = document.getElementById("leagueSearch").value.toLowerCase();
     const leagues = document.getElementsByClassName("columnleagueimg")[0].getElementsByTagName("img");
