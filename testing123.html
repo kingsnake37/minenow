@@ -515,9 +515,7 @@ body {
 
 <script>
 
-///
-
-// Function to toggle the top navigation menu in mobile view
+// Toggle navigation for mobile view
 function topnav() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
@@ -529,12 +527,12 @@ function topnav() {
   }
 }
 
-// Lazy loading initialization for images
+// Initialize lazy loading for images
 $(function() {
   $('.lazy').lazy();
 });
 
-// Global variable to store the active filter
+// Global variable to store active filter
 let activeFilter = "all";
 
 // Function to search leagues by name
@@ -555,7 +553,7 @@ function searchLeagues() {
     });
 }
 
-// Function to filter leagues based on categories
+// Function to filter leagues based on category
 function filterSelection(category) {
     activeFilter = category; // Update active filter
     const searchInput = document.getElementById("leagueSearch").value.toLowerCase();
@@ -582,7 +580,7 @@ function filterSelection(category) {
     document.querySelector(`button[onclick="filterSelection('${category}')"]`).classList.add("active");
 }
 
-// Function to shuffle an array (useful for randomizing league order)
+// Function to shuffle an array (useful for randomizing the league order)
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -609,6 +607,10 @@ function randomizeLeagues() {
         });
     });
 }
+
+// Event listener for randomizing leagues on page load
+document.addEventListener('DOMContentLoaded', randomizeLeagues);
+
 
 
 
