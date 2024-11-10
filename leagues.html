@@ -633,25 +633,33 @@ function shuffle(array) {
 
   ///
 
-// Get the fragment identifier from the URL (everything after #)
-let fragment = window.location.hash.substring(1);
+// Wait for the page to fully load
+window.addEventListener('load', function() {
+    // Get the URL hash (after the # symbol)
+    const league = window.location.hash.substring(1);  // Get the part after '#'
 
-// Check if the fragment exists and if the search bar is available on the page
-if (fragment) {
-    // Get the search input element (you might need to change this selector to match your website)
-    let searchInput = document.querySelector("input[type='search'], input[name='q'], input[name='search']");
+    if (league) {
+        // Find the search input field (modify selector based on your page structure)
+        const searchInput = document.querySelector('input[type="search"], input.search-bar');
 
-    if (searchInput) {
-        // Set the search input value to the fragment
-        searchInput.value = fragment;
+        if (searchInput) {
+            // Populate the search input with the league name from the URL hash
+            searchInput.value = league;
 
-        // Optionally, trigger a search if needed (this depends on the website's behavior)
-        let searchForm = searchInput.form;
-        if (searchForm) {
-            searchForm.submit(); // or searchInput.dispatchEvent(new Event('input'));
+            // Optionally, trigger a search (simulating the user typing)
+            // You can simulate an input event to trigger the search behavior
+            const event = new Event('input', { bubbles: true });
+            searchInput.dispatchEvent(event);
+
+            // If the search form needs to be submitted, you can trigger the form submission as well
+            const searchForm = searchInput.form;  // Get the parent form if necessary
+            if (searchForm) {
+                searchForm.submit();  // Submit the form if required
+            }
         }
     }
-}
+});
+
 
 
 </script>
