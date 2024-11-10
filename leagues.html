@@ -639,17 +639,19 @@ function shuffle(array) {
     // If a hash is present, proceed
     if (hash) {
         const leagueName = hash.substring(1); // Remove the '#' character
-        const searchInput = document.getElementById("leagueSearch"); // Adjust this selector if necessary
+        const searchInput = document.querySelector("#searchBar"); // Adjust this selector to match your search bar element
 
         if (searchInput) {
             // Set the search bar value to the hash text
             searchInput.value = leagueName;
 
-            // Call the search function
-            searchLeagues();
+            // Dispatch input and keydown events to simulate typing and pressing "Enter"
+            searchInput.dispatchEvent(new Event("input", { bubbles: true }));
+            searchInput.dispatchEvent(new KeyboardEvent("keydown", { key: "Enter", bubbles: true }));
         }
     }
 });
+
 
 </script>
 
