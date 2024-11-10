@@ -636,20 +636,16 @@ window.onload = function() {
     const fragment = window.location.hash.substring(1); // Get the fragment identifier (after #)
 
     if (fragment) {
-        // Find the search bar (replace with the correct ID or class of your search input)
+        // Find the search input by its ID
         const searchBar = document.getElementById("leagueSearch");
 
         if (searchBar) {
             // Set the value of the search bar to the fragment identifier
             searchBar.value = fragment;
 
-            // Manually trigger the 'input' event to simulate typing
-            const inputEvent = new Event('input', { bubbles: true, cancelable: true });
-            searchBar.dispatchEvent(inputEvent);
-
-            // Trigger the keyup event if the search listens for it
+            // Manually trigger the keyup event to call the searchLeagues function
             const keyUpEvent = new KeyboardEvent('keyup', {
-                key: 'Enter',
+                key: 'Enter', // This simulates pressing Enter, but you can change it to any key if needed
                 keyCode: 13,
                 code: 'Enter',
                 which: 13,
@@ -657,13 +653,10 @@ window.onload = function() {
                 cancelable: true
             });
             searchBar.dispatchEvent(keyUpEvent);
-
-            // Trigger the change event if it's listening for that
-            const changeEvent = new Event('change', { bubbles: true, cancelable: true });
-            searchBar.dispatchEvent(changeEvent);
         }
     }
 };
+
 
 
 
