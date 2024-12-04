@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Navbar</title>
+  <link rel="stylesheet" href="topnav.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<style>
+    body {
+        font-weight: 300;
+        background-color: rgb(5, 5, 5);
+    }
+</style>
+<body>
+  <nav class="navbar">
+    <a href="#" class="logo">
+        <img src="Images/RoRacing.comLogo.png" alt="Logo" class="logo-img">
+      </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#home"><i class="fa fa-home"></i> Home</a></li>
+
+      <li><a href="#home"><i class="fa-solid fa-trophy"></i> Leagues</a></li>
+
+      <li><a href="#home"><i class="fa-solid fa-tv"></i> TV</a></li>
+
+      <li class="dropdown">
+        <a href="#services" class="dropdown-link"><i class="fa-solid fa-cart-shopping"></i> Marketplace</a>
+        <ul class="dropdown-menu">
+          <li><a href="#web-dev">Web Development</a></li>
+          <li><a href="#design">Design</a></li>
+          <li><a href="#marketing">Marketing</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#about" class="dropdown-link"><i class="fa-solid fa-circle-info"></i> About</a>
+        <ul class="dropdown-menu">
+          <li><a href="#team">Our Team</a></li>
+          <li><a href="#mission">Mission</a></li>
+        </ul>
+      </li>
+
+    </ul>
+    <a href="javascript:void(0);" class="icon fafa-bars">
+      <i class="fa fa-bars" id="fafa-bars"></i>
+    </a>
+  </nav>
+  <script src="script.js"></script>
+</body>
+</html>
