@@ -3,14 +3,11 @@ body {
   font-family: sans-serif; /* Fixed typo in font-family */
 }
 
-
-
-/* Navbar Layout */
 .navbar {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Ensure vertical centering */
-  background-image: linear-gradient(to right, rgb(37, 0, 124), rgb(62, 0, 110));
+  align-items: center;
+  background-image: linear-gradient(to right, rgb(37, 0, 124) , rgb(62, 0, 110));
   color: #fff;
   padding: 10px 20px;
   position: relative;
@@ -23,29 +20,26 @@ body {
   box-shadow: 0px 0px 18px rgb(78, 78, 78);
 }
 
-/* Align icons and text next to each other */
 .nav-links {
   display: flex;
   list-style: none;
-  margin: 0;
+  margin: 0 10px;
   padding: 0;
 }
 
 .nav-links li {
-  display: flex;
-  align-items: center; /* Vertically center the icon and text */
-  padding: 0px 15px;
+  position: relative;
+  padding: 0px 12px;
 }
 
-/* Style for links (icon + text) */
 .nav-links a {
   color: #fff;
   text-decoration: none;
-  display: flex;
-  align-items: center; /* Center the icon and text vertically */
   padding: 10px 15px;
+  display: block;
   transition: color 0.3s ease;
-  position: relative;
+  position: relative; /* Needed for the underline */
+  
 }
 
 /* Smooth Underline Effect */
@@ -55,19 +49,13 @@ body {
   bottom: -11px;
   left: 0;
   width: 0;
-  height: 2px;
-  background-color: #ffffff;
-  transition: width 0.3s ease;
+  height: 2px; /* Height of the underline */
+  background-color: #ffffff; /* Underline color */
+  transition: width 0.3s ease; /* Smooth transition */
 }
 
 .nav-links a:hover::before {
-  width: 100%; /* Underline expands on hover */
-}
-
-/* Font Awesome icons (ensuring proper size and alignment) */
-.nav-links a i {
-  margin-right: 8px; /* Adds space between icon and text */
-  font-size: 22px; /* Adjust the icon size */
+  width: 100%; /* On hover, the underline will expand to full width */
 }
 
 /* Dropdown Menu */
@@ -83,7 +71,7 @@ body {
   opacity: 0;
   transform: translateY(-10px);
   transition: opacity 0.3s ease, transform 0.3s ease;
-  pointer-events: none;
+  pointer-events: none; /* Prevent interaction when hidden */
   border-radius: 5px;
   width: 200%;
 }
@@ -94,9 +82,9 @@ body {
   bottom: 0px;
   left: 0;
   width: 0;
-  height: 2px;
-  background-color: #ffffff;
-  transition: width 0.3s ease;
+  height: 2px; /* Height of the underline */
+  background-color: #ffffff; /* Underline color */
+  transition: width 0.3s ease; /* Smooth transition */
 }
 
 .dropdown:hover .dropdown-menu {
@@ -110,7 +98,7 @@ body {
   .dropdown-menu {
     position: static;
     opacity: 0;
-    max-height: 0;
+    max-height: 0; /* Collapse when hidden */
     overflow: hidden;
     transform: translateY(-10px);
     transition: opacity 0.4s ease, transform 0.4s ease, max-height 0.4s ease;
@@ -119,9 +107,10 @@ body {
   .dropdown.open .dropdown-menu {
     opacity: 1;
     transform: translateY(0);
-    max-height: 300px;
+    max-height: 300px; /* Adjust based on content height */
     pointer-events: auto;
   }
+
 }
 
 /* Hamburger Menu */
@@ -145,7 +134,7 @@ body {
     left: -100%;
     width: 250px;
     height: 100%;
-    background-image: linear-gradient(to right, rgb(37, 0, 124), rgb(62, 0, 110));
+    background-image: linear-gradient(to right, rgb(37, 0, 124) , rgb(62, 0, 110));
     opacity: 0;
     transform: translateX(0);
     transition: left 0.4s ease, opacity 0.4s ease;
@@ -165,4 +154,43 @@ body {
     width: 80%;
     margin-top: 5%;
   }
+
+
+  
+}
+
+/* Logo */
+.navbar .logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 4.2vh;
+  border-radius: 5px;
+}
+
+#fafa-bars {
+  font-size: 25px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#fafa-bars.fa-bars {
+  transform: rotate(0deg);
+  opacity: 1;
+}
+
+#fafa-bars.fa-x {
+  transform: rotate(90deg);
+  opacity: 1;
+}
+
+/* Make the icon disappear smoothly when toggling */
+#fafa-bars:not(.open).fa-bars {
+  opacity: 1;
+  transform: scale(1);
+}
+
+#fafa-bars.open.fa-x {
+  transform: rotate(90deg) scale(1);
 }
