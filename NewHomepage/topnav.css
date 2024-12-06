@@ -1,198 +1,228 @@
 body {
-    margin: 0;
-    font-family: sans-serif; /* Fixed typo in font-family */
-  }
-  
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-image: linear-gradient(to right, rgb(37, 0, 124) , rgb(62, 0, 110));
-    color: #fff;
-    padding: 10px 20px;
-    position: relative;
-    font-size: 20px;
-    width: 90vh;
-    border-radius: 5px;
-    margin-top: 2%;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0px 0px 18px rgb(78, 78, 78);
-  }
-  
-  .nav-links {
-    display: flex;
-    list-style: none;
-    margin: 0 10px;
-    padding: 0;
-  }
-  
-  .nav-links li {
-    position: relative;
-    padding: 0px 12px;
-  }
-  
-  .nav-links a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 15px;
-    display: flex; /* Use flexbox */
-    align-items: center; /* Vertically align icon and text */
-    gap: 8px; /* Add space between icon and text */
-    transition: color 0.3s ease;
-    position: relative;
+  margin: 0;
+  font-family: sans-serif; /* Fixed typo in font-family */
 }
 
-  
-  /* Smooth Underline Effect */
+.navbar {
+  display: flex;
+  position: fixed; /* Keeps it fixed on scroll */
+  top: 2%; /* Adjusts the position from the top */
+  left: 50%; /* Centers it horizontally relative to the viewport */
+  transform: translateX(-50%); /* Shifts it back by half of its own width for perfect centering */
+  justify-content: space-between;
+  align-items: center;
+  background-image: linear-gradient(to right, rgb(37, 0, 124), rgb(62, 0, 110));
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 20px;
+  width: 900px; /* Fixed width */
+  border-radius: 5px;
+  box-shadow: 0px 0px 18px rgb(78, 78, 78);
+  z-index: 1000; /* Ensures it stays above other content */
+}
+
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0 10px;
+  padding: 0;
+}
+
+.nav-links li {
+  position: relative;
+  padding: 0px 12px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: flex; /* Use flexbox */
+  align-items: center; /* Vertically align icon and text */
+  gap: 8px; /* Add space between icon and text */
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+
+/* Smooth Underline Effect */
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  bottom: -11px;
+  left: 0;
+  width: 0;
+  height: 2px; /* Height of the underline */
+  background-color: #ffffff; /* Underline color */
+  transition: width 0.3s ease; /* Smooth transition */
+}
+
+.nav-links a:hover::before {
+  width: 100%; /* On hover, the underline will expand to full width */
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  background-image: linear-gradient(to right, rgb(24, 0, 80) , rgb(38, 0, 67));
+  box-shadow: 0px 0px 18px rgb(32, 32, 32);
+  top: 110%;
+  left: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none; /* Prevent interaction when hidden */
+  border-radius: 5px;
+  width: 200%;
+}
+
+.dropdown-menu a::before {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 0;
+  height: 2px; /* Height of the underline */
+  background-color: #ffffff; /* Underline color */
+  transition: width 0.3s ease; /* Smooth transition */
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Mobile-specific dropdown animations */
+@media (max-width: 768px) {
+  .dropdown-menu {
+    position: static;
+    opacity: 0;
+    max-height: 0; /* Collapse when hidden */
+    overflow: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.4s ease, transform 0.4s ease, max-height 0.4s ease;
+  }
+
+  .dropdown.open .dropdown-menu {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 300px; /* Adjust based on content height */
+    pointer-events: auto;
+  }
+
+}
+
+/* Hamburger Menu */
+.fafa-bars {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: -45px;
+    left: -80%;
+    width: 250px;
+    height: 1000000px;
+    padding-top: 10%;
+    background-image: linear-gradient(to right, rgb(37, 0, 124) , rgb(62, 0, 110));
+    opacity: 0;
+    transition: left 0.4s ease, opacity 0.4s ease;
+    z-index: 999;
+    transform: translateX(-13%);
+    box-shadow: 0px 0px 18px rgb(32, 32, 32);
+  }
+
+  .nav-links.active {
+    left: 0;
+    opacity: 1;
+  }
+
+  .fafa-bars {
+    display: flex;
+  }
+
+  .navbar {
+    width: 80%;
+    margin-top: 2%;
+  }
+
   .nav-links a::before {
     content: '';
     position: absolute;
-    bottom: -11px;
+    bottom: -2px;
     left: 0;
     width: 0;
     height: 2px; /* Height of the underline */
     background-color: #ffffff; /* Underline color */
     transition: width 0.3s ease; /* Smooth transition */
   }
-  
-  .nav-links a:hover::before {
-    width: 100%; /* On hover, the underline will expand to full width */
+
+  .logofull {
+    display: block; /* Make the full logo visible on mobile */
+    z-index: 900; /* Ensure it stays above other elements */
+    text-align: center; /* Center align the logo if necessary */
+    width: 200px;
+    margin-left: -30%;
+  }
+
+  hr {
+      color: #06002f;
+      width: 100%;
   }
   
-  /* Dropdown Menu */
-  .dropdown-menu {
-    position: absolute;
-    background-color: #06002f;
-    top: 110%;
-    left: 0;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    pointer-events: none; /* Prevent interaction when hidden */
-    border-radius: 5px;
-    width: 200%;
-  }
-  
-  .dropdown-menu a::before {
-    content: '';
-    position: absolute;
-    bottom: 0px;
-    left: 0;
-    width: 0;
-    height: 2px; /* Height of the underline */
-    background-color: #ffffff; /* Underline color */
-    transition: width 0.3s ease; /* Smooth transition */
-  }
-  
-  .dropdown:hover .dropdown-menu {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-  }
-  
-  /* Mobile-specific dropdown animations */
-  @media (max-width: 768px) {
-    .dropdown-menu {
-      position: static;
-      opacity: 0;
-      max-height: 0; /* Collapse when hidden */
-      overflow: hidden;
-      transform: translateY(-10px);
-      transition: opacity 0.4s ease, transform 0.4s ease, max-height 0.4s ease;
-    }
-  
-    .dropdown.open .dropdown-menu {
-      opacity: 1;
-      transform: translateY(0);
-      max-height: 300px; /* Adjust based on content height */
-      pointer-events: auto;
-    }
-  
-  }
-  
-  /* Hamburger Menu */
-  .fafa-bars {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-    text-decoration: none;
-    color: white;
-    font-size: 25px;
-  }
-  
-  /* Mobile Navigation */
-  @media (max-width: 768px) {
-    .nav-links {
-      display: flex;
-      flex-direction: column;
-      position: fixed;
-      top: 0;
-      left: -100%;
-      width: 250px;
-      height: 100%;
-      background-image: linear-gradient(to right, rgb(37, 0, 124) , rgb(62, 0, 110));
-      opacity: 0;
-      transform: translateX(0);
-      transition: left 0.4s ease, opacity 0.4s ease;
-      z-index: 999;
-    }
-  
-    .nav-links.active {
-      left: 0;
-      opacity: 1;
-    }
-  
-    .fafa-bars {
-      display: flex;
-    }
-  
-    .navbar {
-      width: 80%;
-      margin-top: 5%;
-    }
-  
-  
-    
-  }
-  
-  /* Logo */
-  .navbar .logo {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo img {
-    width: 4.2vh;
-    border-radius: 5px;
-  }
-  
-  #fafa-bars {
-    font-size: 25px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-  }
-  
-  #fafa-bars.fa-bars {
-    transform: rotate(0deg);
-    opacity: 1;
-  }
-  
-  #fafa-bars.fa-x {
-    transform: rotate(90deg);
-    opacity: 1;
-  }
-  
-  /* Make the icon disappear smoothly when toggling */
-  #fafa-bars:not(.open).fa-bars {
-    opacity: 1;
-    transform: scale(1);
-  }
-  
-  #fafa-bars.open.fa-x {
-    transform: rotate(90deg) scale(1);
-  }
+}
+
+.logofull {
+  display: none;
+}
+
+/* Logo */
+.navbar .logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 50px;
+  border-radius: 5px;
+}
+
+#fafa-bars {
+  font-size: 25px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#fafa-bars.fa-bars {
+  transform: rotate(0deg);
+  opacity: 1;
+}
+
+#fafa-bars.fa-x {
+  transform: rotate(90deg);
+  opacity: 1;
+}
+
+/* Make the icon disappear smoothly when toggling */
+#fafa-bars:not(.open).fa-bars {
+  opacity: 1;
+  transform: scale(1);
+}
+
+#fafa-bars.open.fa-x {
+  transform: rotate(90deg) scale(1);
+}
