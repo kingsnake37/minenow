@@ -45,3 +45,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+
+// Function to handle the visibility of the logos based on screen size
+function toggleLogoVisibility() {
+  // Get the full logo and small logo image elements
+  const fullLogo = document.querySelector('.logofull');
+  const smallLogo = document.querySelector('.logo img'); // Ensure this selects the image inside .logo
+
+  // Check if the screen width is less than or equal to 768px
+  if (window.innerWidth <= 768) {
+    fullLogo.style.display = 'block';  // Show the full logo
+    smallLogo.style.display = 'none';  // Hide the small logo
+  } else {
+    fullLogo.style.display = 'none';  // Hide the full logo
+    smallLogo.style.display = 'block';  // Show the small logo
+  }
+}
+
+// Run the function on page load to set the initial visibility
+toggleLogoVisibility();
+
+// Add an event listener to check for window resize and adjust visibility
+window.addEventListener('resize', toggleLogoVisibility);
+
