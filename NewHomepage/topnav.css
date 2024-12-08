@@ -19,6 +19,7 @@ body {
   border-radius: 5px;
   box-shadow: 0px 0px 18px rgb(78, 78, 78);
   z-index: 1000; /* Ensures it stays above other content */
+  font-family: sans-serif;
 }
 
 
@@ -98,7 +99,7 @@ body {
 }
 
 /* Mobile-specific dropdown animations */
-@media (max-width: 768px) {
+@media (max-width: 968px) {
   .dropdown-menu {
     position: static;
     opacity: 0;
@@ -129,7 +130,7 @@ body {
 }
 
 /* Mobile Navigation */
-@media (max-width: 768px) {
+@media (max-width: 968px) {
   .nav-links {
     display: flex;
     flex-direction: column;
