@@ -43,11 +43,14 @@
   
   .accordion-item {
     margin-bottom: 10px;
-    border: 1px solid #333;
     border-radius: 4px;
     overflow: hidden;
     cursor: pointer;
     transition: all 0.3s ease;
+  }
+
+  .accordion-header:hover {
+    background-color: #333;
   }
   
   .accordion-header {
@@ -61,6 +64,7 @@
   .accordion-header i {
     color: #ffffff;
     margin-right: 10px;
+    transition: transform 0.5s ease;
   }
   
   .accordion-content {
@@ -79,16 +83,12 @@
   }
   
   .toggle-icon {
-    transition: transform 0.3s ease;
+    transition: transform 0.5s ease;
   }
   
   .accordion-item.active .toggle-icon {
     transform: rotate(180deg);
-  }
-  
-  .accordion-header:hover i {
-    color: #aa00ff;
-    transition: color 0.3s ease;
+    transition: transform 0.5s ease;
   }
   
 
