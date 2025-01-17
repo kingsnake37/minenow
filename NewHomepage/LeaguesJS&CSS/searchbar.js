@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to shuffle the cards
     function shuffleCards() {
-        // Separate the specific card from the others
         const specificCard = cards.find(card => card.dataset.class === "Single-Seater first");
         const otherCards = cards.filter(card => card !== specificCard);
 
@@ -77,4 +76,11 @@ document.addEventListener('DOMContentLoaded', () => {
     shuffleCards(); // Shuffle the cards
     lazyLoadImages(); // Lazy load images
     filterAndSearch(); // Apply filter and search functionality
+
+    // Auto-populate the search bar from the URL fragment and trigger search
+    const urlFragment = window.location.hash;
+    if (urlFragment) {
+        searchBar.value = urlFragment.substring(1);  // Set the value of the search bar
+        filterAndSearch();  // Trigger the search with the value
+    }
 });
