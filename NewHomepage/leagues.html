@@ -240,26 +240,6 @@
 
     </div>
     <script>
-window.onload = function() {
-    // Get the current URL fragment (e.g., #imrp)
-    const urlFragment = window.location.hash;
-
-    // Check if the fragment exists
-    if (urlFragment) {
-        // Remove the '#' from the fragment and set it as the search bar value
-        const searchBar = document.getElementById('searchBar');
-        searchBar.value = urlFragment.substring(1);
-        
-        // Trigger the search (assuming you have a function `performSearch`)
-        performSearch(searchBar.value);
-    }
-};
-
-// Example search function (you can replace this with your actual search logic)
-function performSearch(query) {
-    console.log("Searching for:", query);
-    // Your search functionality here, e.g., filtering leagues or fetching results.
-}
 
 
     </script>
