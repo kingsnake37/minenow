@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
     const words = [
-        { text: "Developers.", link: "https://example.com/developers" },
         { text: "Content.", link: "https://example.com/content" },
         { text: "Assets.", link: "https://example.com/assets" },
         { text: "Leagues.", link: "https://example.com/leagues" },

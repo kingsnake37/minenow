@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+}
+
+/* Base styles */
+.myButtoncontainer {
+    display: flex;
+    justify-content: center; /* Center-align the buttons */
+    flex-wrap: nowrap; /* Ensure buttons stay in a row */
+    gap: 10px; /* Adds space between buttons */
+    overflow-x: auto; /* Allow horizontal scrolling if necessary */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .myButtoncontainer .btn {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    background-color: transparent;
+    outline: rgb(165, 165, 165) 2px solid;    
+    cursor: pointer;
+    font-weight: bold;
+    font-size: medium;
+    transition: .2s ease-in-out;
+    border-radius: 3px;
+    -webkit-appearance: none;
+    color: rgb(191, 191, 191);
+  }
+  
+  .myButtoncontainer .btn:hover {
+    background-color: rgb(115, 0, 255);
+    color: white;
+  }
+  
+  .myButtoncontainer .btn.active {
+    background-color: rgb(85, 0, 160);
+    color: white;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .myButtoncontainer {
+      gap: 0px; /* Reduce spacing between buttons */
+      padding-top: 1rem;
+      overflow-x: auto; /* Enable horizontal scrolling */
+      -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+      padding-bottom: 10px; /* Prevent buttons from being cut off */
+      margin-bottom: -1rem;
+      margin-left: 1rem;
+      justify-content: flex-start; /* Center-align the buttons */
+    }
+    .myButtoncontainer .btn {
+      font-size: 14px; /* Smaller font size for smaller screens */
+      flex: 0 0 auto; /* Prevent buttons from stretching */
+      margin-right: 10px; /* Add spacing between buttons */
+      white-space: nowrap; /* Prevent text wrapping inside buttons */
+    }
+  }
+  

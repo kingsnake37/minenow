@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script src="topnav.js"></script>
+    <link rel="stylesheet" href="topnav.css">
+    <link rel="stylesheet" href="TvJS&CSS/main.css">
+    <link rel="stylesheet" href="TvJS&CSS/videofilter.css">
+    <link rel="stylesheet" href="TvJS&CSS/iframelist.css">
+    <link rel="stylesheet" href="TvJS&CSS/h1.css">
+    <script src="TvJS&CSS/iframejs.js"></script>
+    <script src="TvJS&CSS/buttons.js"></script>
+</head>
+<style>
+  html {
+    overflow-y: scroll; /* Always show vertical scrollbar */
+}
+
+/* Fade-in animation */
+.fade-in {
+    animation: fadeIn 0.3s ease-in forwards;
+}
+
+/* Fade-out animation */
+.fade-out {
+    animation: fadeOut 0.3s ease-out forwards;
+}
+
+/* Keyframes for fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px); /* Slight slide-up effect */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyframes for fade-out */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(10px); /* Slight slide-down effect */
+    }
+}
+
+
+
+</style>
+<body>
+    <nav class="navbar">
+        <a href="#" class="logo">
+            <img src="Images/RoRacing.comLogo.png" alt="Logo" class="logo-img">
+          </a>
+          <img src="Images/RoRacing.comLogoFull.png" class="logofull">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#home"><i class="fa fa-home"></i> Home</a></li>
+    
+          <li><a href="#home"><i class="fa-solid fa-trophy"></i> Leagues</a></li>
+    
+          <li><a href="#home"><i class="fa-solid fa-tv"></i> TV</a></li>
+    
+          <li><a href="#home"><i class="fa-solid fa-cart-shopping"></i> Accessories</a></li>
+    
+          <li><a href="#home"><i class="fa-brands fa-discord"></i> Discord</a></li>
+    
+          
+    
+    
+    
+        </ul>
+        <a href="javascript:void(0);" class="icon fafa-bars">
+          <i class="fa fa-bars" id="fafa-bars"></i>
+        </a>
+      </nav>
+
+      <h1>Welcome to <span class="h1underline">RoRacingTV!</span></h1>
+      <h2>The biggest database of roracing videos!<br> To get your videos on here join our <a href="https://discord.gg/Z49TUtFE9M">discord!</a></h2>
+    
+      <div id="myBtnContainer" class="myButtoncontainer">
+        <button class="btn active" onclick="filterSelection('all')"> Most Recent</button>
+        <button class="btn" onclick="filterSelection('Recommended')"> Recommended</button>
+        <button class="btn" onclick="filterSelection('Execlusives')"> Execlusives</button>
+        <button class="btn" onclick="filterSelection('Promoted')"> Promoted</button>
+      </div>
+    </div>
+
+
+
+
+    <ul id="youtube-list">
+      <li data-tags="Most Recent">https://youtu.be/OdasOLHHfJY</li>
+      <li data-tags="Most Recent">https://youtu.be/rbF7b8XhJ7c</li>
+      <li data-tags="Most Recent">https://youtu.be/qCXQadtqQbA</li>
+      <li data-tags="Most Recent">https://youtu.be/q21NK7l5C_s</li>
+      <li data-tags="Most Recent, Recommended">https://youtu.be/HgBhRCf5aRU</li>
+      <li data-tags="Most Recent">https://youtu.be/HVR3kHTfZog</li>
+      <li data-tags="Most Recent">https://youtu.be/VaHFNo2vIuk</li>
+      <li data-tags="Most Recent">https://youtu.be/6JF0kNtdUFg</li>
+      <li data-tags="Most Recent">https://youtu.be/HyvXR1Xb4ic</li>
+      <li data-tags="Most Recent">https://youtu.be/OGA0sNjN8tw</li>
+      <li data-tags="Most Recent">https://youtu.be/VyCRYcHWD_U?si=HpwKbTk1sfnkfbsv</li>
+      <li data-tags="Most Recent">https://youtu.be/sBc9S_27pR0?si=zTP_KSzslH3LpcBV</li>
+      <li data-tags="Most Recent, Execlusives">https://www.youtube.com/watch?v=UDNWIrbJcug</li>
+      <li data-tags="Most Recent">https://youtu.be/qH4T2lFtI_w</li>
+      <li data-tags="Most Recent">https://youtu.be/XUEAk0ak8sI</li>
+      <li data-tags="Most Recent">https://youtu.be/aXIu_Qs-W-c</li>
+      <li data-tags="Most Recent">https://youtu.be/U54FBOlm8qE</li>
+      <li data-tags="Most Recent">https://youtu.be/HZI9vFdLxXU</li>
+      <li data-tags="Most Recent">https://youtu.be/CBlvwcTDpGs</li>
+      <li data-tags="Most Recent">https://youtu.be/hUAbDNHmoJI</li>
+      <li data-tags="Most Recent">https://youtu.be/lx5auB_kVTk?si=meNOZehvG_nyPZR8</li>
+      <li data-tags="Most Recent">https://youtu.be/3KRN53Mzl1Q</li>
+      <li data-tags="Most Recent">https://youtu.be/EXWdu_HNSyM</li>
+      <li data-tags="Most Recent">https://youtu.be/jzVE4y0pd04</li>
+      <li data-tags="Most Recent">https://youtu.be/9_cHctlpO2E</li>
+      <li data-tags="Most Recent">https://youtu.be/ZYhtWorKGME</li>
+      <li data-tags="Most Recent">https://youtu.be/Hr2GUSBmFg8?si=48gyuS0ELvTs15qy</li>
+      <li data-tags="Most Recent">https://youtu.be/rJbBSVMBqBk?si=6g1po3kLamoNDtLH</li>
+      <li data-tags="Most Recent">https://youtu.be/MniNJ0GB404</li>
+      <li data-tags="Most Recent">https://youtu.be/B2Q7PQsfVTk</li>
+      <li data-tags="Most Recent">https://www.youtube.com/watch?v=juobHlnafkk</li>
+      <li data-tags="Most Recent">https://youtu.be/5eDgPdX-vLU</li>
+      <li data-tags="Most Recent">https://youtu.be/h2LMtOEqx-E</li>
+      <li data-tags="Most Recent">https://youtu.be/SrYvp32UG0I</li>
+      <li data-tags="Most Recent">https://youtu.be/lz73wq8rG6w?si=clTzA4SsTtwDJSW-</li>
+      <li data-tags="Most Recent">https://youtu.be/9PkF-8mWFiY</li>
+      <li data-tags="Most Recent">https://youtu.be/ajCZS1Upr_Q</li>
+      <li data-tags="Most Recent">https://www.youtube.com/watch?v=eD5SMkumVe8&t=131s</li>
+      <li data-tags="Most Recent">https://youtu.be/fMr69fCQBes</li>
+      <li data-tags="Most Recent">https://www.youtube.com/watch?v=Pr3yr0KctqA</li>
+      <li data-tags="Most Recent">https://www.youtube.com/watch?v=13QoveFqMHY&t=51s</li>
+      <li data-tags="Most Recent, Recommended">https://youtu.be/8YqnFPcT0gE?si=2qKYU2lAbhpBfHU-</li>
+      <li data-tags="Most Recent">https://youtu.be/qR0waEd4gLU</li>
+      <li data-tags="Most Recent">https://www.youtube.com/watch?v=oMpQN3gCHsk</li>
+      <li data-tags="Most Recent">https://youtu.be/t-lI0ZGZrv0</li>
+      <li data-tags="Most Recent">https://youtu.be/BaANZrVTOzk</li>
+      <li data-tags="Most Recent">https://m.youtube.com/watch?v=sTi9GLjWe4U</li>
+      <li data-tags="Most Recent">https://youtu.be/niWeAFoI4As?si=tfj-YQxE5NwQd5GT</li>
+      <li data-tags="Most Recent">https://youtu.be/aPWzZSKW1MY?si=0HGS3J5YHEFF0zwK</li>
+      <li data-tags="Most Recent">https://youtu.be/sjD_r5mz4Yk</li>
+      <li data-tags="Most Recent">https://youtu.be/1NGXtz2Gs5A</li>
+      <li data-tags="Most Recent, Recommended">https://youtu.be/tydtmaN9Pec?si=_YxMB_okNupXIWlV</li>
+
+    </ul>
+    
+<script>
+
+let isAnimating = false; // Flag to prevent overlapping animations
+
+function filterSelection(tag) {
+    if (isAnimating) return; // Prevent new animations while the current one is ongoing
+    isAnimating = true;
+
+    const listItems = document.querySelectorAll("#youtube-list li");
+
+    // First, apply the fade-out animation to all items
+    listItems.forEach((item) => {
+        item.classList.remove("fade-in"); // Ensure the fade-in class is removed
+        item.classList.add("fade-out"); // Add the fade-out class to all items
+        setTimeout(() => {
+            item.style.display = "none"; // Hide the item after fade-out animation
+        }, 300); // Duration of fade-out animation
+    });
+
+    // After a short delay, filter and apply fade-in to the relevant items
+    setTimeout(() => {
+        listItems.forEach((item) => {
+            const shouldShow = tag === "all" || (item.dataset.tags && item.dataset.tags.includes(tag));
+
+            if (shouldShow) {
+                item.style.display = ""; // Revert the display to make it visible
+                item.classList.remove("fade-out"); // Remove fade-out class
+                item.classList.add("fade-in"); // Apply fade-in animation
+            }
+        });
+
+        // Update the active button
+        const buttons = document.querySelectorAll(".btn");
+        buttons.forEach((button) => button.classList.remove("active"));
+
+        const activeButton = Array.from(buttons).find((button) =>
+            button.textContent.trim().toLowerCase() === (tag === "all" ? "most recent" : tag.toLowerCase())
+        );
+
+        if (activeButton) {
+            activeButton.classList.add("active");
+        }
+
+        // Reset the animation flag after animations complete
+        isAnimating = false;
+    }, 350); // Wait until all items have been hidden before showing the filtered items
+}
+
+// Initial call to show all videos
+filterSelection("all");
+
+</script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+.searchbarcontainer input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    width: 45vw;
+    border-radius: 5px;
+    background-color: rgb(238, 238, 238);
+    transform: scale(1);
+    transition: .3s ease-in-out;
+    margin-top: 150px;
+    margin-bottom: 10px;
+    -webkit-text-fill-color: black;
+}
+
+input[type="text"]:focus {
+    outline: 2px solid #8a00da;
+    transform: scale(1.02);
+}
+
+.searchbarcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+
+#filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.filter-btn {
+    border: none;
+    outline: none;
+    padding: 0.3vw 1vw;
+    background-color: transparent;
+    outline: rgb(165, 165, 165) 2px solid;    
+    cursor: pointer;
+    font-weight: bold;
+    font-size: medium;
+    transition: .2s ease-in-out;
+    border-radius: 3px;
+    -webkit-appearance: none;
+    color: rgb(191, 191, 191);
+}
+
+.filter-btn:hover {
+    background-color: #8a00da;
+    color: white;
+    transition: .2s ease-in-out;
+}
+
+.filter-btn.active {
+    background-color: #850bff;
+    color: white;
+    outline: none;
+}
+
+/* 23.8' */
+@media (min-width: 1351px) and (max-width: 1900px) {
+
+}
+
+/* Tablet */
+@media (min-width: 951px) and (max-width: 1350px) {
+    .searchbarcontainer input[type="text"] {
+        width: 85vw;
+    
+        }
+}
+
+/* Tablet Vertical */
+@media (min-width: 700px) and (max-width: 950px) {
+    .searchbarcontainer input[type="text"] {
+        width: 85vw;
+    
+        }
+}
+
+/* Phone Small */
+@media (min-width: 300px) and (max-width: 699px) {
+    .searchbarcontainer input[type="text"] {
+    width: 85vw;
+
+    }
+}

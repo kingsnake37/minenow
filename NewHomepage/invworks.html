@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script src="topnav.js"></script>
+    <link rel="stylesheet" href="topnav.css">
+    <title>Product Showcase</title>
+    <style>
+        body {
+            background-color: #222;
+            color: white;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-image: 
+                linear-gradient(45deg, transparent 100%, rgba(0, 0, 0, 0.1) 100%),
+                linear-gradient(-45deg, transparent 50%, rgba(0, 0, 0, 0.1) 50%);
+            background-size: 20px 20px;
+            background-position: center;
+            min-height: 100vh;
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .spantitle {
+            transition: transform 0.5s ease, opacity 0.5s ease;
+            font-size: 55px;
+            font-weight: 500;
+            color: rgb(220, 220, 220);
+            text-shadow: 0px 0px 18px rgb(109, 109, 109);
+            text-decoration-line: underline;
+            -webkit-text-decoration-line: underline;
+            text-decoration-color: red;
+            -webkit-text-decoration-color: red;
+        }
+
+        .h1title {
+            font-size: 65px;
+            margin: 0;
+            font-weight: 400;
+            text-align: center;
+            padding-top: 150px;
+            color: white;
+        }
+
+        .h2title {
+            font-size: 25px;
+            margin: 0;
+            font-weight: 400;
+            text-align: center;
+            padding-top: 20px;
+            color: rgb(123, 123, 123);
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            width: 100%;
+            margin-top: 100px;
+        }
+
+        .product-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            aspect-ratio: 2/3;
+        }
+
+        .product-link:hover {
+            transform: translateY(-5px);
+        }
+
+        .product {
+            background-color: #171717;
+            padding: 20px;
+            text-align: center;
+            border-radius: 15px;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            transition: box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-link:hover .product {
+            box-shadow: 0 5px 15px rgba(175, 175, 175, 0.3);
+        }
+
+        .product-image {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        .product img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .product h3 {
+            margin: 10px 0;
+            font-size: 1.2em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            min-height: 2.4em;
+        }
+
+        .product p {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #bfbfbf;
+            margin: 10px 0;
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (min-width: 700px) and (max-width: 950px) {
+    .h1title {
+    font-size: 35px;
+    margin: 0;
+    font-weight: 400;
+    text-align: center;
+    padding-top: 150px;
+    color: white;
+}
+
+.spantitle {
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    font-size: 35px;
+    font-weight: 500;
+    color: rgb(220, 220, 220);
+    text-shadow: 0px 0px 18px rgb(109, 109, 109);
+    text-decoration-line: underline;
+    -webkit-text-decoration-line: underline;
+    text-decoration-color: red;
+    -webkit-text-decoration-color: red;
+}
+}
+
+/* Phone Small */
+@media (min-width: 300px) and (max-width: 699px) {
+    .h1title {
+    font-size: 35px;
+    margin: 0;
+    font-weight: 400;
+    text-align: center;
+    padding-top: 150px;
+    color: white;
+}
+
+.spantitle {
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    font-size: 35px;
+    font-weight: 500;
+    color: rgb(220, 220, 220);
+    text-shadow: 0px 0px 18px rgb(109, 109, 109);
+    text-decoration-line: underline;
+    -webkit-text-decoration-line: underline;
+    text-decoration-color: red;
+    -webkit-text-decoration-color: red;
+}
+}
+
+.view-all-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.view-all-button {
+    background-color: transparent;
+    color: #801eff;
+    border: 2px solid #801eff;
+    padding: 15px 40px;
+    font-size: 1.2em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.view-all-button:hover {
+    background-color: #801eff;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(128, 30, 255, 0.3);
+}
+
+@media (max-width: 600px) {
+    .view-all-button {
+        padding: 12px 30px;
+        font-size: 1em;
+        width: 80%;
+        text-align: center;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#" class="logo">
+            <img src="Images/RoRacing.comLogo.png" alt="Logo" class="logo-img">
+        </a>
+        <img src="Images/RoRacing.comLogoFull.png" class="logofull">
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#home"><i class="fa fa-home"></i> Home</a></li>
+            <li><a href="#home"><i class="fa-solid fa-trophy"></i> Leagues</a></li>
+            <li><a href="#home"><i class="fa-solid fa-tv"></i> TV</a></li>
+            <li><a href="#home"><i class="fa-solid fa-cart-shopping"></i> Accessories</a></li>
+            <li><a href="#home"><i class="fa-brands fa-discord"></i> Discord</a></li>
+        </ul>
+        <a href="javascript:void(0);" class="icon fafa-bars">
+            <i class="fa fa-bars" id="fafa-bars"></i>
+        </a>
+    </nav>
+
+    <div class="main-content">
+        <h1 class="h1title">Find your own <span class="spantitle">style.</span></h1>
+        <h2 class="h2title">RoRacing.com x INV Works</h2>
+        <div class="container">
+            <a href="https://www.roblox.com/catalog/83095500469804/Inv-Works-Camo-Hat-in-Blue" target="_blank" class="product-link">
+                <div class="product">
+                    <div class="product-image">
+                        <img src="https://tr.rbxcdn.com/180DAY-b2cb56bef8a34f0d1616d8c08fc75bd8/420/420/Hat/Webp/noFilter">
+                    </div>
+                    <h3>Inv Works Camo Hat in Blue</h3>
+                    <p>95 R$</p>
+                </div>
+            </a>
+            <a href="https://www.roblox.com/catalog/126170167015226/Professional-Racing-Helmet-AGP-inv-works-PS-Fake" target="_blank" class="product-link">
+                <div class="product">
+                    <div class="product-image">
+                        <img src="https://tr.rbxcdn.com/180DAY-e808ac7ca2d43dfc7e0920d0c6c50e6d/420/420/Hat/Webp/noFilter">
+                    </div>
+                    <h3>Professional Racing Helmet AGP</h3>
+                    <p>95 R$</p>
+                </div>
+            </a>            
+            <a href="https://www.roblox.com/catalog/100780154073618/Professional-Racing-Helmet-AGP-inv-works-PS-Juan" target="_blank" class="product-link">
+                <div class="product">
+                    <div class="product-image">
+                        <img src="https://tr.rbxcdn.com/180DAY-bda003029acdd8a34dab280f27773261/420/420/Hat/Webp/noFilter">
+                    </div>
+                    <h3>Professional Racing Helmet AGP</h3>
+                    <p>95 R$</p>
+                </div>
+            </a>
+            <a href="https://www.roblox.com/catalog/16687866997/Professional-Racing-Helmet-Serpent-Energy-Driver" target="_blank" class="product-link">
+                <div class="product">
+                    <div class="product-image">
+                        <img src="https://tr.rbxcdn.com/180DAY-6cc220d0f4184828d192b91c2af1a075/420/420/Hat/Webp/noFilter">
+                    </div>
+                    <h3>Professional Racing Helmet Serpent Energy</h3>
+                    <p>95 R$</p>
+                </div>
+            </a>
+            <a href="https://www.roblox.com/catalog/80422002175870/Pro-Racing-Helmet-II-in-Bleu-Livery" target="_blank" class="product-link">
+                <div class="product">
+                    <div class="product-image">
+                        <img src="https://tr.rbxcdn.com/180DAY-0bc170b8a64a3a574e61ee474367c258/420/420/Hat/Webp/noFilter">
+                    </div>
+                    <h3>Pro Racing Helmet II in Bleu Livery</h3>
+                    <p>95 R$</p>
+                </div>
+            </a>
+            <a href="https://www.roblox.com/catalog/14071144234/HANS-Device-in-Carbon-Fibre" target="_blank" class="product-link">
+                <div class="product">
+                    <div class="product-image">
+                        <img src="https://tr.rbxcdn.com/180DAY-bafecdbc1be0a11bb8fef063b251c5e3/420/420/Hat/Webp/noFilter">
+                    </div>
+                    <h3>HANS Device in Carbon Fibre</h3>
+                    <p>75 R$</p>
+                </div>
+            </a>
+            <a href="https://www.roblox.com/catalog/108588530084210/Pro-Racing-Helmet-II-in-Black" target="_blank" class="product-link">
+                <div class="product">
+                    <div class="product-image">
+                        <img src="https://tr.rbxcdn.com/180DAY-28503424501f49ea5b26f632b4670aca/420/420/Hat/Webp/noFilter">
+                    </div>
+                    <h3>Pro Racing Helmet II in Black</h3>
+                    <p>95 R$</p>
+                </div>
+            </a>
+            <a href="https://www.roblox.com/catalog/16004581952/Professional-Racing-Pitcrew-Headset-in-Black" target="_blank" class="product-link">
+                <div class="product">
+                    <div class="product-image">
+                        <img src="https://tr.rbxcdn.com/180DAY-4856ce583a499d449e743b33c3f61525/420/420/Hat/Webp/noFilter">
+                    </div>
+                    <h3>Professional Racing Pitcrew Headset in Black</h3>
+                    <p>95 R$</p>
+                </div>
+            </a>
+            <a href="https://www.roblox.com/catalog/14634099996/Motocross-Helmet-In-Black" target="_blank" class="product-link">
+                <div class="product">
+                    <div class="product-image">
+                        <img src="https://tr.rbxcdn.com/180DAY-ffd2b402db4077ac4a6b7d1b90572eca/420/420/Hat/Webp/noFilter">
+                    </div>
+                    <h3>Motocross Helmet In Black</h3>
+                    <p>95 R$</p>
+                </div>
+            </a>
+            <a href="https://www.roblox.com/catalog/16375754394/Professional-GT-Racing-Helmet-in-Fjord-Livery" target="_blank" class="product-link">
+                <div class="product">
+                    <div class="product-image">
+                        <img src="https://tr.rbxcdn.com/180DAY-f6827c0c5d8a0d4f9648bdc17b5823dd/420/420/Hat/Webp/noFilter">
+                    </div>
+                    <h3>Professional GT Racing Helmet in Fjord Livery</h3>
+                    <p>95 R$</p>
+                </div>
+            </a>
+            <a href="https://www.roblox.com/catalog/14363429234/Inv-Works-Racing-Team-T-shirt-White-Black-text" target="_blank" class="product-link">
+                <div class="product">
+                    <div class="product-image">
+                        <img src="https://tr.rbxcdn.com/180DAY-7804be34b917d950327d4dcf3baf828f/420/420/LayeredAccessory/Webp/noFilter">
+                    </div>
+                    <h3>Inv Works Racing Team T-shirt White</h3>
+                    <p>95 R$</p>
+                </div>
+            </a>
+            <a href="https://www.roblox.com/catalog/16678386529/Professional-Racing-Helmet-Red-Goat-Driver-Open" target="_blank" class="product-link">
+                <div class="product">
+                    <div class="product-image">
+                        <img src="https://tr.rbxcdn.com/180DAY-96e143e9928a5d7709cfcf41c48df990/420/420/Hat/Webp/noFilter">
+                    </div>
+                    <h3>Professional Racing Helmet Red Goat</h3>
+                    <p>95 R$</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="view-all-container">
+        <a href="https://www.roblox.com/catalog?Category=1&CreatorName=inv+works&CreatorType=Group&salesTypeFilter=1" target="_blank" class="view-all-button">View All Products</a>
+    </div>
+</body>
+</html>

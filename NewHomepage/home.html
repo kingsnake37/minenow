@@ -8,13 +8,14 @@
   <link rel="stylesheet" href="HomeJS&CSS/HomePageWordChanger.css">
   <link rel="stylesheet" href="HomeJS&CSS/1stSection.css">
   <link rel="stylesheet" href="HomeJS&CSS/2ndSection.css">
+  <link rel="stylesheet" href="HomeJS&CSS/3rdSection.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <script src="topnav.js"></script>
 </head>
 <style>
     body {
         font-weight: 300;
-        background-color: rgb(14, 14, 14);
+        background-color: #121212; /* Base dark background */
         scroll-behavior: smooth;
     }
 </style>
@@ -31,22 +32,13 @@
 
       <li><a href="#home"><i class="fa-solid fa-tv"></i> TV</a></li>
 
-      <li class="dropdown">
-        <a href="#services" class="dropdown-link"><i class="fa-solid fa-cart-shopping"></i> Marketplace</a>
-        <ul class="dropdown-menu">
-          <li><a href="#web-dev">Asset Market</a></li>
-          <li><a href="#design">Design</a></li>
-          <li><a href="#marketing">Marketing</a></li>
-        </ul>
-      </li>
+      <li><a href="#home"><i class="fa-solid fa-cart-shopping"></i> Accessories</a></li>
 
-      <li class="dropdown">
-        <a href="#about" class="dropdown-link"><i class="fa-solid fa-circle-info"></i> About Us</a>
-        <ul class="dropdown-menu">
-          <li><a href="#team">Discord</a></li>
-          <li><a href="#mission">Mission</a></li>
-        </ul>
-      </li>
+      <li><a href="#home"><i class="fa-brands fa-discord"></i> Discord</a></li>
+
+      
+
+
 
     </ul>
     <a href="javascript:void(0);" class="icon fafa-bars">
@@ -75,58 +67,74 @@
   <div class="accordion">
     <div class="accordion-item">
       <div class="accordion-header" onclick="toggleAccordion(this)">
-        <i class="fa-solid fa-columns"></i>
+        <i class="fa-solid fa-trophy"></i>
         <span>Find A League</span>
         <i class="fa fa-chevron-down toggle-icon"></i>
       </div>
-      <div class="accordion-content">
-        Placeholder
-      </div>
+      <div class="accordion-content">      
+      Find a top league quick and easy, with options for all skill levels and styles. <a href="" class="linka">View Leagues!</a>
+    </div>
     </div>
     <div class="accordion-item">
       <div class="accordion-header" onclick="toggleAccordion(this)">
-        <i class="fa-solid fa-user"></i>
+        <i class="fa-solid fa-tv"></i>
         <span>Watch RoRacing TV</span>
         <i class="fa fa-chevron-down toggle-icon"></i>
       </div>
       <div class="accordion-content">
-        Placeholder
+        Watch top-tier RoRacing Content from all over the community including execlusives! <a href="" class="linka">Watch!</a>
       </div>
     </div>
+
     <div class="accordion-item">
       <div class="accordion-header" onclick="toggleAccordion(this)">
-        <i class="fa-solid fa-file-alt"></i>
-        <span>Buy Assets</span>
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span>Buy Character Accessories</span>
         <i class="fa fa-chevron-down toggle-icon"></i>
       </div>
       <div class="accordion-content">
-        <a href="https://youtube.com">a</a>
+        Feel confident about your racing skills? Now it's time to feel confident about your looks. <a href="" class="linka">Buy Accessories!</a>
       </div>
     </div>
+
     <div class="accordion-item">
       <div class="accordion-header" onclick="toggleAccordion(this)">
-        <i class="fa-solid fa-chart-line"></i>
-        <span>Find Developers</span>
-        <i class="fa fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="accordion-content">
-        Placeholder
-      </div>
-    </div>
-    <div class="accordion-item">
-      <div class="accordion-header" onclick="toggleAccordion(this)">
-        <i class="fa-solid fa-filter"></i>
+        <i class="fa-brands fa-discord"></i>
         <span>Join Our Discord</span>
         <i class="fa fa-chevron-down toggle-icon"></i>
       </div>
       <div class="accordion-content">
-        Placeholder
+        Didn't find something for you? Maybe this will cover you. <a href="" class="linka">Join our Discord!</a>
       </div>
     </div>
-  </div>
-  
 
+
+  </div>
 </div>
+</div>
+
+<div class="section3" id="section3">
+  <div class="container3">
+    <h1 class="title">Join <span class="purplegradient">thousands</span> of racers finding their <span class="purplegradient">dream postions</span> at top leagues.</h1>
+
+    <center>
+    <div class="logos">
+        <img src="https://via.placeholder.com/150x50?text=Honda" alt="Honda">
+        <img src="https://via.placeholder.com/150x50?text=Nvidia" alt="Nvidia">
+        <img src="https://via.placeholder.com/150x50?text=Airbnb" alt="Airbnb">
+        <img src="https://via.placeholder.com/150x50?text=CapitalOne" alt="Capital One">
+    </div>
+  </center>
+
+    <p class="quote">
+        “I was very frusturated with the classic old discord advertising.<br>Most racers and league owners had to resort to advertising in different discord servers.<br> I wanted something different—a new way made for people like you and me, for us who are actively seeking opportunities.<br> So, I created <span class="highlight">RoRacing.com</span>—the only website built for Ro Racers.”
+    </p>
+
+    <p class="footer">Ro Arthur - RoRacing.com Founder</p>
+</div>
+</div>
+
+
 </body>
 <script src="HomeJS&CSS/HomepageWordChanger.js"></script>
 <script src="HomeJS&CSS/2ndSection.js"></script>
