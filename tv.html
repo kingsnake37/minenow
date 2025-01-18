@@ -1,443 +1,227 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<link rel="icon" href="Images/favicon.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script src="topnav.js"></script>
+    <link rel="stylesheet" href="topnav.css">
+    <link rel="stylesheet" href="TvJS&CSS/main.css">
+    <link rel="stylesheet" href="TvJS&CSS/videofilter.css">
+    <link rel="stylesheet" href="TvJS&CSS/iframelist.css">
+    <link rel="stylesheet" href="TvJS&CSS/h1.css">
+    <script src="TvJS&CSS/iframejs.js"></script>
+    <script src="TvJS&CSS/buttons.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q9VMH52ZHE"></script>
+    <link rel="icon" href="Images/favicon.png" type="image/png">
 <link rel="shortcut icon" href="Images/favicon.png" type="image/png">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.11/jquery.lazy.min.js"></script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q9VMH52ZHE"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-Q9VMH52ZHE');
-</script>
-
-<title>TV</title>
+    gtag('config', 'G-Q9VMH52ZHE');
+    </script>
+</head>
 <style>
-
-* {
-  box-sizing: border-box;
+  html {
+    overflow-y: scroll; /* Always show vertical scrollbar */
 }
 
-html {
-    scroll-behavior: smooth;
+/* Fade-in animation */
+.fade-in {
+    animation: fadeIn 0.3s ease-in forwards;
+}
+
+/* Fade-out animation */
+.fade-out {
+    animation: fadeOut 0.3s ease-out forwards;
+}
+
+/* Keyframes for fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px); /* Slight slide-up effect */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyframes for fade-out */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(10px); /* Slight slide-down effect */
+    }
 }
 
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #191919;
-}
-
-.topnav {
-  overflow: hidden;
-  background-color: rgb(9, 9, 9);
-  z-index: 100;
-  width: 100%;
-  position: fixed;
-  text-align: center; /* Center align the text */
-  margin-top: -4.8%;
-}
-
-.topnav a {
-  display: inline-block;
-  color: #ffffff;
-  padding: 24px 30px;
-  text-decoration: none;
-  font-size: 25px;
-  font-weight: 500;
-  position: relative;
-  text-decoration: none;
-}
-
-.logoimg {
-  display: inline-block;
-  margin-bottom: -27px;
-  width: 260px;
-  margin-right: 19%;
-}
-
-.mainwidth{
-  width: 80%;
-  margin-left: 9%;
-}
-
-.topnav a:hover {
-  color: #6200ff;
-  text-underline-offset: 29px;
-}
-
-.topnav a::before {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #9000ff;
-  transform: scaleX(0);
-  transition: transform 0.2s ease;
-}
-
-.topnav a:hover::before {
-  transform: scaleX(1);
-}
-
-.topnav a.active {
-  color: #ffffff;
-  background: linear-gradient(to bottom, #000000 0%, #303030 100%);
-}
-
-.topnav .icon {
-  display: none;
-}
-
-.logoimg:hover {
-  opacity: 0.7;
-}
-
-.mainwidth {
-  width: 80%;
-  margin-left: 9%;
-}
-
-.responsiveimg {
-  max-width: 80%;
-  height: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
-}
-
-.jointhediscordimg {
-  max-width: 90%;
-  height: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 6%;
-  margin-bottom: 50px;
-}
-
-.jointhediscordimg:hover {
-  border: 1px solid blueviolet;
-}
-
-::-webkit-scrollbar {
-  width: 20px;
-}
-
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey; 
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgb(140, 0, 255); 
-  border-radius: 10px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #7700b3; 
-}
-
-h1 {
-  text-align: center;
-  text-decoration-line: underline;
-  -webkit-text-decoration-line: underline;
-  text-decoration-color: red;
-  -webkit-text-decoration-color: red;
-  text-underline-offset: 3px;
-  color: white;
-}
-
-h3 {
-  text-align: center;
-  color: white;
-}
-
-
-@media screen and (max-width: 1400px) {
-  .topnav {
-  position: relative;
-  margin-top: 0%;
- }
-
-  .topnav a:not(:first-child) {display: none;}
-  .topnav a.icon {
-    float: right;
-    display: block;
-    font-size: 22px;
-  }
-
-  
-  .topnav.responsive {position: relative;}
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-
-  .logoimg {
-  display: inline-block;
-  width: 62%;
-  margin-top: 10px;
-  float: left;
-  margin-left: 2%;
-  max-width: 200px;
-}
-
-.video-container iframe {
-  border: 0;
-  border-radius: 5px;
-  width: 100%; /* Adjust the width to fit 3 iframes */
-    margin: 3px;
-    height: 185px; /* Set a specific height */
-}
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.1) 50%, transparent 50%),
+    linear-gradient(290deg, rgba(0, 0, 0, 0.1) 50%, transparent 50%);
+   background-size: 20px 20px;
+   background-position: center;
+   min-height: 100vh;
 
 }
-
-@media screen and (min-width: 1800px)  {
-  
-  .video-container {
-    width: 100%;
-    text-align: center;
-}
-
-.video-container iframe {
-    display: inline-block;
-    width: 30%; /* Adjust the width to fit 3 iframes */
-    margin: 10px;
-    height: 315px; /* Set a specific height */
-    border: 0;
-    border-radius: 15px;
-}
-
-}
-
-#myBtn {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 30px;
-  z-index: 1;
-  font-size: 18px;
-  border: none;
-  outline: none;
-  background-color: blue;
-  color: white;
-  cursor: pointer;
-  padding: 15px;
-  border-radius: 4px;
-}
-
-#myBtn:hover {
-  background-color: #555;
-}
-
-
-
-hr {
-  margin-top: 5%;
-  margin-bottom: 5%;
-}
-
-.JoinTheDiscordIMG img:hover {
-  -webkit-transform: scale(1.08);
-	transform: scale(1.08);
-  opacity: 0.6;
-}
-
-.JoinTheDiscordIMG img {
-  -webkit-transform: scale(1);
-	transform: scale(1);
-	-webkit-transition: .3s ease-in-out;
-	transition: .3s ease-in-out;
-}
-
 
 </style>
-</head>
 <body>
+    <nav class="navbar">
+        <a href="#" class="logo">
+            <img src="Images/RoRacing.comLogo.png" alt="Logo" class="logo-img">
+          </a>
+          <img src="Images/RoRacing.comLogoFull.png" class="logofull">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="home"><i class="fa fa-home"></i> Home</a></li>
+    
+          <li><a href="leagues"><i class="fa-solid fa-trophy"></i> Leagues</a></li>
+    
+          <li><a href="tv"><i class="fa-solid fa-tv"></i> TV</a></li>
+    
+          <li><a href="invworks"><i class="fa-solid fa-cart-shopping"></i> Accessories</a></li>
+    
+          <li><a href="https://discord.gg/Z49TUtFE9M"><i class="fa-brands fa-discord"></i> Discord</a></li>
+    
+          
+    
+    
+    
+        </ul>
+        <a href="javascript:void(0);" class="icon fafa-bars">
+          <i class="fa fa-bars" id="fafa-bars"></i>
+        </a>
+      </nav>
 
-  <div class="topnav" id="myTopnav">
-    <img src="Images/Logo.png" class="logoimg" onclick="window.location.href = 'home';" style="cursor: pointer;">
-    <a href="home"><i class="fa fa-home"></i><span> Home</span></a>
-    <a href="leagues"><i class="fa fa-trophy"></i><span> Leagues</span></a>
-    <a href="tv"><i class="fa fa-television"></i><span> TV</span></a>
-    <a href="rrc25"><i class="fa fa-trophy"></i><span> RRC25</span></a>
-    <a href="https://discord.gg/Z49TUtFE9M" target="_blank"><i class="fa-brands fa-discord"></i><span> Discord</span></a>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
-    </a>
-  </div>
+      <h1>Welcome to <span class="h1underline">RoRacingTV!</span></h1>
 
-  <div class="mainwidth">
-    <div class="JoinTheDiscordIMG">
-<img src="Images/INVWorks.png" onclick="window.open('https://www.roblox.com/catalog?Category=1&CreatorName=inv+works&CreatorType=Group&salesTypeFilter=1', '_blank')" style="cursor: pointer;" class="jointhediscordimg">
-</div>
-<h1>Recommended Content</h1>
-
-<div class="video-container">
-  <iframe data-src="https://www.youtube.com/embed/8YqnFPcT0gE?si=LB4ern98t-XE78x_"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/KlK8uLC0Sn0?si=Ec2WAdbqVRC6Nu0i" class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/tydtmaN9Pec?si=UVqlWPe1Wj2tV3JJ" class="lazy"></iframe>
-</div>
-
-<hr>
-<h1>All Content</h1>
-<h3>To get your videos on here, join our <a href="https://discord.gg/Z49TUtFE9M">discord </a>server!</h3>
+    
+      <div id="myBtnContainer" class="myButtoncontainer">
+        <button class="btn active" onclick="filterSelection('all')"> Most Recent</button>
+        <button class="btn" onclick="filterSelection('Recommended')"> Recommended</button>
+        <button class="btn" onclick="filterSelection('Execlusives')"> Exclusives</button>
+        <button class="btn" onclick="filterSelection('Promoted')"> Promoted</button>
+      </div>
+    </div>
 
 
 
 
+    <ul id="youtube-list">
+      <li data-tags="Most Recent">https://youtu.be/OdasOLHHfJY</li>
+      <li data-tags="Most Recent">https://youtu.be/rbF7b8XhJ7c</li>
+      <li data-tags="Most Recent">https://youtu.be/qCXQadtqQbA</li>
+      <li data-tags="Most Recent">https://youtu.be/q21NK7l5C_s</li>
+      <li data-tags="Most Recent, Recommended">https://youtu.be/HgBhRCf5aRU</li>
+      <li data-tags="Most Recent">https://youtu.be/HVR3kHTfZog</li>
+      <li data-tags="Most Recent">https://youtu.be/VaHFNo2vIuk</li>
+      <li data-tags="Most Recent">https://youtu.be/6JF0kNtdUFg</li>
+      <li data-tags="Most Recent">https://youtu.be/HyvXR1Xb4ic</li>
+      <li data-tags="Most Recent">https://youtu.be/OGA0sNjN8tw</li>
+      <li data-tags="Most Recent">https://youtu.be/VyCRYcHWD_U?si=HpwKbTk1sfnkfbsv</li>
+      <li data-tags="Most Recent">https://youtu.be/sBc9S_27pR0?si=zTP_KSzslH3LpcBV</li>
+      <li data-tags="Most Recent, Execlusives">https://www.youtube.com/watch?v=UDNWIrbJcug</li>
+      <li data-tags="Most Recent">https://youtu.be/qH4T2lFtI_w</li>
+      <li data-tags="Most Recent">https://youtu.be/XUEAk0ak8sI</li>
+      <li data-tags="Most Recent">https://youtu.be/aXIu_Qs-W-c</li>
+      <li data-tags="Most Recent">https://youtu.be/U54FBOlm8qE</li>
+      <li data-tags="Most Recent">https://youtu.be/HZI9vFdLxXU</li>
+      <li data-tags="Most Recent">https://youtu.be/CBlvwcTDpGs</li>
+      <li data-tags="Most Recent">https://youtu.be/hUAbDNHmoJI</li>
+      <li data-tags="Most Recent">https://youtu.be/lx5auB_kVTk?si=meNOZehvG_nyPZR8</li>
+      <li data-tags="Most Recent">https://youtu.be/3KRN53Mzl1Q</li>
+      <li data-tags="Most Recent">https://youtu.be/EXWdu_HNSyM</li>
+      <li data-tags="Most Recent">https://youtu.be/jzVE4y0pd04</li>
+      <li data-tags="Most Recent">https://youtu.be/9_cHctlpO2E</li>
+      <li data-tags="Most Recent">https://youtu.be/ZYhtWorKGME</li>
+      <li data-tags="Most Recent">https://youtu.be/Hr2GUSBmFg8?si=48gyuS0ELvTs15qy</li>
+      <li data-tags="Most Recent">https://youtu.be/rJbBSVMBqBk?si=6g1po3kLamoNDtLH</li>
+      <li data-tags="Most Recent">https://youtu.be/MniNJ0GB404</li>
+      <li data-tags="Most Recent">https://youtu.be/B2Q7PQsfVTk</li>
+      <li data-tags="Most Recent">https://www.youtube.com/watch?v=juobHlnafkk</li>
+      <li data-tags="Most Recent">https://youtu.be/5eDgPdX-vLU</li>
+      <li data-tags="Most Recent">https://youtu.be/h2LMtOEqx-E</li>
+      <li data-tags="Most Recent">https://youtu.be/SrYvp32UG0I</li>
+      <li data-tags="Most Recent">https://youtu.be/lz73wq8rG6w?si=clTzA4SsTtwDJSW-</li>
+      <li data-tags="Most Recent">https://youtu.be/9PkF-8mWFiY</li>
+      <li data-tags="Most Recent">https://youtu.be/ajCZS1Upr_Q</li>
+      <li data-tags="Most Recent">https://www.youtube.com/watch?v=eD5SMkumVe8&t=131s</li>
+      <li data-tags="Most Recent">https://youtu.be/fMr69fCQBes</li>
+      <li data-tags="Most Recent">https://www.youtube.com/watch?v=Pr3yr0KctqA</li>
+      <li data-tags="Most Recent">https://www.youtube.com/watch?v=13QoveFqMHY&t=51s</li>
+      <li data-tags="Most Recent, Recommended">https://youtu.be/8YqnFPcT0gE?si=2qKYU2lAbhpBfHU-</li>
+      <li data-tags="Most Recent">https://youtu.be/qR0waEd4gLU</li>
+      <li data-tags="Most Recent">https://www.youtube.com/watch?v=oMpQN3gCHsk</li>
+      <li data-tags="Most Recent">https://youtu.be/t-lI0ZGZrv0</li>
+      <li data-tags="Most Recent">https://youtu.be/BaANZrVTOzk</li>
+      <li data-tags="Most Recent">https://m.youtube.com/watch?v=sTi9GLjWe4U</li>
+      <li data-tags="Most Recent">https://youtu.be/niWeAFoI4As?si=tfj-YQxE5NwQd5GT</li>
+      <li data-tags="Most Recent">https://youtu.be/aPWzZSKW1MY?si=0HGS3J5YHEFF0zwK</li>
+      <li data-tags="Most Recent">https://youtu.be/sjD_r5mz4Yk</li>
+      <li data-tags="Most Recent">https://youtu.be/1NGXtz2Gs5A</li>
+      <li data-tags="Most Recent, Recommended">https://youtu.be/tydtmaN9Pec?si=_YxMB_okNupXIWlV</li>
 
-
-
-
-
-<div class="video-container">
-  <iframe data-src="https://www.youtube.com/embed/rbF7b8XhJ7c?si=75l1y1n8DbsCFOgP"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/OdasOLHHfJY?si=8WJKQRR50dY09Yze"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/qCXQadtqQbA?si=xQOuLS95HLW8NMV1"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/q21NK7l5C_s?si=JplkdE3UpSj3o-U4"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/HgBhRCf5aRU?si=_xaCQOprT_pM9yJo"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/HVR3kHTfZog?si=sp0yfh1rGZ14ItWk"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/VaHFNo2vIuk?si=iHz55rCEiSOUDC6S"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/6JF0kNtdUFg?si=KYDGXtPq5YB8mhAR"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/HyvXR1Xb4ic?si=9VcqmQCVxxHzN5sS"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/OGA0sNjN8tw?si=m1DtefSdYvqRZ1tY"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/VyCRYcHWD_U?si=X2Kt13h9HPIhECEs"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/sBc9S_27pR0?si=Vm9zFcoMoa-sblEo"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/UDNWIrbJcug?si=jHyoAiUJXZdFdE-b"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/XUEAk0ak8sI?si=3R42GnFS7CrkQMLV"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/aXIu_Qs-W-c?si=ETE8ZRbsZQwzw5DO"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/U54FBOlm8qE?si=deLSZzKdJoU5ttrE"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/HZI9vFdLxXU?si=8K8ST_ysjw6ddo3z"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/lx5auB_kVTk?si=Ogj-ZYh23OseYRi5"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/hUAbDNHmoJI?si=amVOnIgfytxTZI_l"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/CBlvwcTDpGs?si=RUlRHUchqvL7WHfp"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/3KRN53Mzl1Q?si=TuroGP6tlXrK4wmL"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/EXWdu_HNSyM?si=H9wBsAQhN2LPhdex"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/jzVE4y0pd04?si=RTlsLsAFEMjPwSgx"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/9_cHctlpO2E?si=yHbn-87hz78KbTaB"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/ZYhtWorKGME?si=Rjm991CyLO_3aYG2"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/vD17-yjwlCM?si=2smYwIBN7fvcnSqG"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/MniNJ0GB404?si=o9Hjb9qD-WL1uIH1"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/eTfglgf5K5Y?si=r9pcYxFE_GaGCe7Y"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/B2Q7PQsfVTk?si=eGJNElq6ld4TbPIJ"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/juobHlnafkk?si=uLOJF0cZnxGP5NJ9"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/5eDgPdX-vLU?si=OjzvSc1ljJt4IUua"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/h2LMtOEqx-E?si=HZZDovC6r3NEkV3W"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/MmHfRAdedMI?si=B9I_aBCMtjjS5uFk"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/SrYvp32UG0I?si=NpjrpPGiPPpDWjpJ"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/rfl67xdcWl0?si=tWx86Fs_y67G9gFE"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/9PkF-8mWFiY?si=JkRPPeeNt0SKWAYW"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/ajCZS1Upr_Q?si=bclhsGC8JbLKrQK_"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/eD5SMkumVe8?si=iFix3aaWRfH3xPB7"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/Pr3yr0KctqA?si=t-HL553tEAucBnXq"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/13QoveFqMHY?si=FXHkTtY52R8Z1Efn"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/8YqnFPcT0gE?si=4cJ4pJvyPzeiIEnu"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/qR0waEd4gLU?si=P60vkwHJBrr2bXDu"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/oMpQN3gCHsk?si=gc2d7bB8We6Qq_W_"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/t-lI0ZGZrv0?si=f0stcyRP_cFuBZim"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/BaANZrVTOzk?si=gY_5-9P4tPmah6kj"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/6t862JGHWYI?si=YpU87b2xFT2C2rAk"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/lpt73rZvfBQ?si=85xQf0SDJ3YwqWO5"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/1NGXtz2Gs5A?si=J3jh7ll8a-EKwvS2"  class="lazy"></iframe>
-  <iframe data-src="https://www.youtube.com/embed/sjD_r5mz4Yk?si=eN21Z99omwgydAwY"  class="lazy"></iframe>
-</div>
-
-<div class="JoinTheDiscordIMG">
-<img src="Images/JoinTheDiscord.png" class="jointhediscordimg" onclick="window.open('https://discord.gg/pFGvssAkww', '_blank')" style="cursor: pointer;">
-</div>
-
-<button onclick="topFunction()" id="myBtn" title="Go to top">↑</button>
-</div>
+    </ul>
+    
 <script>
-function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-    document.querySelector(".logoimg").style.display = "none";
-  } else {
-    x.className = "topnav";
-    document.querySelector(".logoimg").style.display = "block";
-  }
-}
 
-//
+let isAnimating = false; // Flag to prevent overlapping animations
 
-document.querySelectorAll('[type="color"]').forEach(($input) => {
-  $input.addEventListener("change", (e) => {
-    document
-      .querySelector(".scroller")
-      .style.setProperty(`--${$input.getAttribute("id")}`, $input.value);
-  });
-});
+function filterSelection(tag) {
+    if (isAnimating) return; // Prevent new animations while the current one is ongoing
+    isAnimating = true;
 
-$(document).ready(function() {
-    $('.lazy').each(function() {
-      // Ensure iframes get their 'src' from 'data-src' when they are visible
-      var $iframe = $(this);
-      
-      // Check if IntersectionObserver is supported (for older browsers fallback)
-      if ('IntersectionObserver' in window) {
-        let observer = new IntersectionObserver(function(entries) {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              let iframe = entry.target;
-              iframe.src = iframe.getAttribute('data-src');
-              observer.unobserve(iframe); // Stop observing once loaded
-            }
-          });
-        });
-        
-        observer.observe(this);
-      } else {
-        // Fallback to a manual lazy load if IntersectionObserver is not supported
-        $(window).scroll(function() {
-          if ($iframe.offset().top <= $(window).scrollTop() + $(window).height()) {
-            if (!$iframe.attr('src')) {
-              $iframe.attr('src', $iframe.attr('data-src'));
-            }
-          }
-        }).trigger('scroll'); // Trigger on load in case already in viewport
-      }
+    const listItems = document.querySelectorAll("#youtube-list li");
+
+    // First, apply the fade-out animation to all items
+    listItems.forEach((item) => {
+        item.classList.remove("fade-in"); // Ensure the fade-in class is removed
+        item.classList.add("fade-out"); // Add the fade-out class to all items
+        setTimeout(() => {
+            item.style.display = "none"; // Hide the item after fade-out animation
+        }, 300); // Duration of fade-out animation
     });
-  });
 
-//
+    // After a short delay, filter and apply fade-in to the relevant items
+    setTimeout(() => {
+        listItems.forEach((item) => {
+            const shouldShow = tag === "all" || (item.dataset.tags && item.dataset.tags.includes(tag));
 
-let mybutton = document.getElementById("myBtn");
+            if (shouldShow) {
+                item.style.display = ""; // Revert the display to make it visible
+                item.classList.remove("fade-out"); // Remove fade-out class
+                item.classList.add("fade-in"); // Apply fade-in animation
+            }
+        });
 
-window.onscroll = function() {scrollFunction()};
+        // Update the active button
+        const buttons = document.querySelectorAll(".btn");
+        buttons.forEach((button) => button.classList.remove("active"));
 
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
+        const activeButton = Array.from(buttons).find((button) =>
+            button.textContent.trim().toLowerCase() === (tag === "all" ? "most recent" : tag.toLowerCase())
+        );
+
+        if (activeButton) {
+            activeButton.classList.add("active");
+        }
+
+        // Reset the animation flag after animations complete
+        isAnimating = false;
+    }, 350); // Wait until all items have been hidden before showing the filtered items
 }
 
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
+// Initial call to show all videos
+filterSelection("all");
 
 </script>
-
 </body>
 </html>
