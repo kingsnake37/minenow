@@ -80,3 +80,19 @@ section {
 
       }
   }
+
+  /* 23.8" */
+  @media (min-width: 1351px) and (max-width: 1900px) {
+    .circle {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 3px solid #ffffff;
+      background-color: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+      margin-top: 15%;
+    }
+  }
