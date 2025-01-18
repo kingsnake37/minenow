@@ -1,67 +1,95 @@
 document.addEventListener('DOMContentLoaded', () => {
     const searchBar = document.getElementById('searchBar');
     const filterButtons = document.querySelectorAll('.filter-btn');
-    const cardContainer = document.querySelector('body'); // Parent element containing the cards
     const cards = Array.from(document.querySelectorAll('.card'));
+    const cardContainer = cards[0]?.parentElement;
 
-    if (!searchBar || filterButtons.length === 0 || cards.length === 0) {
-        console.error("Required elements not found in the DOM!");
+    if (!searchBar || !filterButtons.length || !cards.length || !cardContainer) {
+        console.error("Required elements not found!");
         return;
     }
 
-    // Function to shuffle the cards
-    function shuffleCards() {
-        const specificCard = cards.find(card => card.dataset.class === "Single-Seater first");
-        const otherCards = cards.filter(card => card !== specificCard);
+    // Updated lazy loading function to handle both data-src and loading="lazy"
+    function lazyLoadImages() {
+        const lazyImages = document.querySelectorAll('img[data-src][loading="lazy"]');
+        console.log('Found lazy images:', lazyImages.length);
 
-        // Shuffle the other cards using Fisher-Yates algorithm
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            console.log('Loading image:', img.dataset.src);
+                            img.src = img.dataset.src;
+                            img.removeAttribute('loading'); // Remove lazy loading attribute
+                            observer.unobserve(img);
+                        }
+                    }
+                });
+            }, {
+                root: null,
+                rootMargin: '50px 0px',
+                threshold: 0
+            });
+
+            lazyImages.forEach(img => {
+                // Ensure image isn't already loaded
+                if (!img.src || img.src !== img.dataset.src) {
+                    imageObserver.observe(img);
+                }
+            });
+        } else {
+            // Fallback for browsers without IntersectionObserver
+            lazyImages.forEach(img => {
+                if (img.dataset.src) {
+                    img.src = img.dataset.src;
+                    img.removeAttribute('loading');
+                }
+            });
+        }
+    }
+
+    function shuffleCards() {
+        const firstCard = cards.find(card => card.dataset.class && card.dataset.class.includes('first'));
+        const otherCards = cards.filter(card => !card.dataset.class || !card.dataset.class.includes('first'));
+        
         for (let i = otherCards.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [otherCards[i], otherCards[j]] = [otherCards[j], otherCards[i]];
         }
 
-        // Append the specific card first, followed by shuffled cards
-        const container = cardContainer.querySelector('.card').parentElement;
-        if (specificCard) container.appendChild(specificCard); // Append the specific card first
-        otherCards.forEach(card => container.appendChild(card)); // Append the remaining shuffled cards
+        cardContainer.innerHTML = '';
+        
+        if (firstCard) {
+            cardContainer.appendChild(firstCard);
+        }
+        
+        otherCards.forEach(card => cardContainer.appendChild(card));
+
+        // Reinitialize lazy loading after shuffling
+        setTimeout(lazyLoadImages, 100); // Small delay to ensure DOM is updated
     }
 
-    // Lazy load images
-    const lazyLoadImages = () => {
-        const images = document.querySelectorAll('img[loading="lazy"]');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.src; // Assign the actual image source
-                    observer.unobserve(img); // Stop observing once loaded
-                }
-            });
-        });
-
-        images.forEach(img => observer.observe(img));
-    };
-
-    // Initialize filtering and lazy loading
     function filterAndSearch() {
         const searchTerm = searchBar.value.toLowerCase();
-        const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
+        const activeFilter = document.querySelector('.filter-btn.active')?.dataset.filter || 'all';
 
         cards.forEach(card => {
-            const title = card.querySelector('.card-title').textContent.toLowerCase();
-            const cardClass = card.dataset.class;
+            const title = card.querySelector('.card-title')?.textContent.toLowerCase() || '';
+            const cardClass = card.dataset.class || '';
 
             const matchesSearch = title.includes(searchTerm);
             const matchesFilter = activeFilter === 'all' || cardClass.includes(activeFilter);
 
-            if (matchesSearch && matchesFilter) {
-                card.style.display = 'block';
-            } else {
-                card.style.display = 'none';
-            }
+            card.style.display = (matchesSearch && matchesFilter) ? 'block' : 'none';
         });
+
+        // Reinitialize lazy loading after filtering
+        setTimeout(lazyLoadImages, 100);
     }
 
+    // Event Listeners
     searchBar.addEventListener('input', filterAndSearch);
 
     filterButtons.forEach(button => {
@@ -72,15 +100,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Initialize shuffle and lazy load
-    shuffleCards(); // Shuffle the cards
-    lazyLoadImages(); // Lazy load images
-    filterAndSearch(); // Apply filter and search functionality
+    // Initialize
+    shuffleCards();
+    filterAndSearch();
 
-    // Auto-populate the search bar from the URL fragment and trigger search
+    // Handle URL fragment
     const urlFragment = window.location.hash;
     if (urlFragment) {
-        searchBar.value = urlFragment.substring(1);  // Set the value of the search bar
-        filterAndSearch();  // Trigger the search with the value
+        const searchTerm = decodeURIComponent(urlFragment.substring(1));
+        searchBar.value = searchTerm;
+        filterAndSearch();
+    }
+
+    // Initial lazy load
+    lazyLoadImages();
+
+    // Add window load event to catch any missed images
+    window.addEventListener('load', () => {
+        lazyLoadImages();
+    });
+
+    // Handle dynamic layout changes
+    if ('ResizeObserver' in window) {
+        const resizeObserver = new ResizeObserver(entries => {
+            lazyLoadImages();
+        });
+        resizeObserver.observe(cardContainer);
     }
 });
