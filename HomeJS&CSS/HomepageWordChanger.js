@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
     const words = [
-        { text: "Content.", link: "https://example.com/content" },
-        { text: "Assets.", link: "https://example.com/assets" },
-        { text: "Leagues.", link: "https://example.com/leagues" },
-        { text: "Way.", link: "https://example.com/h" }
+        { text: "Content.", link: "https://roracing.com/tv" },
+        { text: "Accessories.", link: "https://roracing.com/invworks" },
+        { text: "Leagues.", link: "https://roracing.com/leagues" },
+        { text: "Way.", link: "https://roracing.com/home" }
     ];
     let currentIndex = 0;
 
